@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiberxavfsizlik Bilim Testi (Quiz) — 15 Savol | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Kiberxavfsizlik bo'yicha 15 ta sinov savoli. Kriptografiya, tarmoq xavfsizligi, kiberhujumlar va himoya usullari bo'yicha bilimlaringizni sinab ko'ring.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link active">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quiz Hero -->
+    <section class="module-header">
+        <div class="container" style="text-align: center;">
+            <div class="section-tag">Bilim Sinovi</div>
+            <h1>🧠 Kiberxavfsizlik Bilim Testi</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                Barcha 6 ta modul bo'yicha tayyorlangan 15 ta professional test savoli. Javoblarni istalgan paytda o'zgartirishingiz va test yakunida batafsil tahlilni ko'rishingiz mumkin.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Quiz Container -->
+    <main class="container" style="padding: 3.5rem 1.5rem;">
+        <div class="quiz-wrapper" id="quizWrapper">
+            <!-- Header bar with Counter and Progress -->
+            <div class="quiz-header-bar">
+                <span class="quiz-counter" id="quizCounterText">Savol 1 / 15</span>
+                <span class="cyber-badge badge-cyan">Cyber Terminal</span>
+            </div>
+
+            <div class="quiz-progress-bar">
+                <div class="quiz-progress-fill" id="quizProgressFill" style="width: 6.66%;"></div>
+            </div>
+
+            <!-- Dynamic Question Container -->
+            <div id="quizQuestionContainer">
+                <!-- Injected by quiz.js -->
+            </div>
+
+            <!-- Palette Grid (1..15) -->
+            <div style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 1rem;">
+                Savollar Navigatsiyasi:
+            </div>
+            <div class="quiz-palette" id="quizPaletteContainer">
+                <!-- Palette buttons 1..15 injected here -->
+            </div>
+
+            <!-- Quiz Controls (Prev, Next, Submit) -->
+            <div class="quiz-controls-bar">
+                <button type="button" class="cyber-btn cyber-btn-outline" id="quizPrevBtn" disabled>
+                    ← Oldingi Savol
+                </button>
+                <button type="button" class="cyber-btn cyber-btn-primary" id="quizNextBtn">
+                    Keyingi Savol →
+                </button>
+                <button type="button" class="cyber-btn cyber-btn-success" id="quizSubmitBtn" style="display: none;">
+                    🏁 Testni Yakunlash
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

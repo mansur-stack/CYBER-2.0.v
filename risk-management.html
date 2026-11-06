@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark" data-module-id="risk-management">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siyosat va Risklarni Boshqarish — Modul 5 | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Axborot xavfsizligi siyosati, CIA Triadasi, risk assessment, hodisalarga javob berish (Incident Response) va biznes uzluksizligi bo'yicha to'liq qo'llanma.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link active">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="module-header">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Bosh sahifa</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="index.html#modules">Modullar</a>
+                <span class="breadcrumb-sep">/</span>
+                <span>Modul 5: Siyosat va Risklar</span>
+            </nav>
+
+            <div class="section-tag">Modul 5</div>
+            <h1>📋 Axborot Xavfsizligi Siyosati va Risklarni Boshqarish</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 800px;">
+                Tashkiliy xavfsizlik arxitekturasi: CIA Triadasi (Maxfiylik, Butunlik, Foydalana olishlik), risklarni baholash matritsasi, kiberhodisalarga javob berish (Incident Response) va biznes uzluksizligi (BCP/DRP).
+            </p>
+
+            <div class="module-meta-bar">
+                <div class="module-meta-item"><span>📚</span> 5 ta boshqaruv darsi</div>
+                <div class="module-meta-item"><span>⏱️</span> ~85 daqiqa o'qish vaqti</div>
+                <div class="module-meta-item"><span>📊</span> Interaktiv 5x5 Risk Matritsasi</div>
+                <div class="module-meta-item"><span>🎯</span> NIST & ISO 27001 asosida</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Module Layout -->
+    <main class="container module-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="module-sidebar">
+            <div class="sidebar-title">
+                <span>Modul Darslari</span>
+                <span class="module-progress-text" id="moduleProgressText">0/5 (0%)</span>
+            </div>
+            <div class="module-progress-track">
+                <div class="module-progress-fill" id="moduleProgressFill" style="width: 0%;"></div>
+            </div>
+
+            <ul class="lesson-nav-list">
+                <li class="lesson-nav-item">
+                    <a href="#risk-1" class="lesson-nav-link active" data-lesson-id="risk-1">
+                        <span>1. Axborot xavfsizligi siyosati</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#risk-2" class="lesson-nav-link" data-lesson-id="risk-2">
+                        <span>2. CIA Triadasi tahlili</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#risk-3" class="lesson-nav-link" data-lesson-id="risk-3">
+                        <span>3. Risk assessment formulasi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#risk-4" class="lesson-nav-link" data-lesson-id="risk-4">
+                        <span>4. Incident Response rejasi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#risk-5" class="lesson-nav-link" data-lesson-id="risk-5">
+                        <span>5. Biznes uzluksizligi va DRP</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                <a href="cyber-lab.html#lab-risk" class="cyber-btn cyber-btn-outline cyber-btn-sm" style="width: 100%;">
+                    🧪 Risk Matrix Lab →
+                </a>
+            </div>
+        </aside>
+
+        <!-- Lessons Content Area -->
+        <article class="lesson-content">
+            <!-- LESSON 1 -->
+            <section class="lesson-section active" id="risk-1">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">1-Dars • Tashkiliy Asoslar</span>
+                    <h2>Axborot Xavfsizligi Siyosati (Security Policy)</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>📜 Siyosat Nima va Nega U Shart?</h3>
+                    <p>
+                        Kiberxavfsizlik faqat texnik dasturlar yoki firewall emas. Eng zaif bo'g'in — ko'pincha inson omilidir. 
+                        <strong>Axborot xavfsizligi siyosati (Information Security Policy)</strong> — bu tashkilotdagi har bir xodim, rahbar va pudratchi rioya qilishi shart bo'lgan rasmiy qoidalar, majburiyatlar va standartlar to'plamidir.
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>1. AUP (Acceptable Use Policy)</h4>
+                            <p>Xizmat kompyuteri, internet va korporativ pochtadan qanday maqsadlarda foydalanish mumkinligi va nimalar qat'iyan taqiqlanganligi qoidalari.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>2. Parol Siyosati (Password Policy)</h4>
+                            <p>Parollar minimal uzunligi (kamida 14 belgi), murakkablik talablari va parollarni boshqalar bilan ulashishni taqiqlash tartibi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>3. Ma'lumotlarni Tasniflash (Classification)</h4>
+                            <p>Ma'lumotlarni darajalarga ajratish: Ommaviy (Public), Ichki foydalanish (Internal), Maxfiy (Confidential) va Qat'iy maxfiy (Strictly Confidential).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">2-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 2 -->
+            <section class="lesson-section" id="risk-2">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">2-Dars • Fundamental Model</span>
+                    <h2>CIA Triadasi: Maxfiylik, Butunlik va Foydalana Olishlik</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🔺 Axborot Xavfsizligining "Oltin Uchburchagi"</h3>
+                    <p>Har qanday kiberxavfsizlik chorasi quyidagi uchta mezonning kamida bittasini himoya qilishga xizmat qiladi:</p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card" style="border-top: 3px solid var(--neon-cyan);">
+                            <h4>1. Maxfiylik (Confidentiality)</h4>
+                            <p>Ma'lumotlar faqat ruxsat berilgan shaxslar uchungina ochiq bo'lishi kerak. Begonalar uni ko'ra olmasligi lozim.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Himoya: AES shifrlash, kirish nazorati (RBAC), 2FA.</p>
+                        </div>
+                        <div class="concept-card" style="border-top: 3px solid var(--cyber-green);">
+                            <h4>2. Butunlik (Integrity)</h4>
+                            <p>Ma'lumotlar uzatilish yoki saqlanish jarayonida ruxsatsiz o'zgartirilmasligi, soxtalashtirilmasligi va buzilmasligi shart.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Himoya: SHA-256 xeshlash, raqamli imzo, nazorat loglari.</p>
+                        </div>
+                        <div class="concept-card" style="border-top: 3px solid var(--warning-orange);">
+                            <h4>3. Foydalana olishlik (Availability)</h4>
+                            <p>Vakolatli foydalanuvchiga ma'lumot yoki tizim kerak bo'lgan istalgan daqiqada u uzluksiz ishlab turishi shart.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Himoya: Zaxira serverlar, DDoS himoyasi, generatorlar, 3-2-1 backup.</p>
+                        </div>
+                    </div>
+
+                    <div class="cyber-alert cyber-alert-danger">
+                        <div class="cyber-alert-icon">⚡</div>
+                        <div class="cyber-alert-content">
+                            <h4>DAD Triadasi (Uchlikning aksi)</h4>
+                            <p>Kiberjinoyatchilarning maqsadi esa aynan uning teskarisidir: <strong>Disclosure</strong> (Maxfiylikni oshkor qilish), <strong>Alteration</strong> (Butunlikni buzib o'zgartirish) va <strong>Destruction/Denial</strong> (Tizimni yo'q qilish yoki xizmatni to'xtatish).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 1-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">3-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 3 -->
+            <section class="lesson-section" id="risk-3">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">3-Dars • Xatarlarni Tahlil Qilish</span>
+                    <h2>Risk Assessment: Risklarni Baholash Formulasi</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>📐 Kiberxavfsizlik Risk Formulasi</h3>
+                    <div class="code-snippet-box">
+                        <div class="code-header"><span>Fundamental Risk Tenglamasi</span></div>
+                        <pre>Risk = Tahdid (Threat) × Zaiflik (Vulnerability) × Salbiy Ta'sir (Impact)</pre>
+                    </div>
+                    <ul>
+                        <li><strong>Tahdid (Threat):</strong> Tizimga zarar yetkazishi mumkin bo'lgan tashqi omil (xakerlar guruhi, toshqin, ichki xiyonatchi).</li>
+                        <li><strong>Zaiflik (Vulnerability):</strong> Tizimdagi teshik yoki himoyalanmagan zaif joy (masalan, patch qilinmagan Windows, ochiq port).</li>
+                        <li><strong>Ta'sir (Impact):</strong> Hujum sodir bo'lgan taqdirda tashkilotga yetadigan moliyaviy, obro' yoki huquqiy zarar miqdori.</li>
+                    </ul>
+
+                    <!-- Interactive Risk Matrix Grid Inside Lesson -->
+                    <div class="interactive-simulator-box" id="risk-demo">
+                        <div class="simulator-header">
+                            <h4>📊 Interaktiv 5x5 Risk Matritsasi Simulyatori</h4>
+                            <span class="cyber-badge badge-orange">NIST Standarti</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            Ehtimollik (1-5) va Ta'sir (1-5) kesishmasidagi katakchani bosing va xatar darajasini hisoblang:
+                        </p>
+
+                        <div style="overflow-x: auto;">
+                            <table class="risk-matrix-table">
+                                <thead>
+                                    <tr>
+                                        <th style="font-size: 0.75rem; color: var(--text-muted); text-align: left;">Ehtimollik ↓ / Ta'sir →</th>
+                                        <th style="font-size: 0.75rem; color: var(--text-muted);">1: Ahamiyatsiz</th>
+                                        <th style="font-size: 0.75rem; color: var(--text-muted);">2: Kichik</th>
+                                        <th style="font-size: 0.75rem; color: var(--text-muted);">3: O'rtacha</th>
+                                        <th style="font-size: 0.75rem; color: var(--text-muted);">4: Katta</th>
+                                        <th style="font-size: 0.75rem; color: var(--text-muted);">5: Halokatli</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight: 600; font-size: 0.8rem;">5: Juda Yuqori</td>
+                                        <td class="risk-cell risk-med" data-l="5" data-i="1">5 M</td>
+                                        <td class="risk-cell risk-high" data-l="5" data-i="2">10 H</td>
+                                        <td class="risk-cell risk-high" data-l="5" data-i="3">15 H</td>
+                                        <td class="risk-cell risk-crit" data-l="5" data-i="4">20 C</td>
+                                        <td class="risk-cell risk-crit" data-l="5" data-i="5">25 C</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600; font-size: 0.8rem;">4: Yuqori</td>
+                                        <td class="risk-cell risk-low" data-l="4" data-i="1">4 L</td>
+                                        <td class="risk-cell risk-med" data-l="4" data-i="2">8 M</td>
+                                        <td class="risk-cell risk-high" data-l="4" data-i="3">12 H</td>
+                                        <td class="risk-cell risk-high" data-l="4" data-i="4">16 H</td>
+                                        <td class="risk-cell risk-crit" data-l="4" data-i="5">20 C</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600; font-size: 0.8rem;">3: O'rtacha</td>
+                                        <td class="risk-cell risk-low" data-l="3" data-i="1">3 L</td>
+                                        <td class="risk-cell risk-med" data-l="3" data-i="2">6 M</td>
+                                        <td class="risk-cell risk-med" data-l="3" data-i="3">9 M</td>
+                                        <td class="risk-cell risk-high" data-l="3" data-i="4">12 H</td>
+                                        <td class="risk-cell risk-high" data-l="3" data-i="5">15 H</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600; font-size: 0.8rem;">2: Kam</td>
+                                        <td class="risk-cell risk-low" data-l="2" data-i="1">2 L</td>
+                                        <td class="risk-cell risk-low" data-l="2" data-i="2">4 L</td>
+                                        <td class="risk-cell risk-med" data-l="2" data-i="3">6 M</td>
+                                        <td class="risk-cell risk-med" data-l="2" data-i="4">8 M</td>
+                                        <td class="risk-cell risk-high" data-l="2" data-i="5">10 H</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600; font-size: 0.8rem;">1: Kamdan-kam</td>
+                                        <td class="risk-cell risk-low" data-l="1" data-i="1">1 L</td>
+                                        <td class="risk-cell risk-low" data-l="1" data-i="2">2 L</td>
+                                        <td class="risk-cell risk-low" data-l="1" data-i="3">3 L</td>
+                                        <td class="risk-cell risk-low" data-l="1" data-i="4">4 L</td>
+                                        <td class="risk-cell risk-med" data-l="1" data-i="5">5 M</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div style="background: rgba(5,11,22,0.8); padding: 1.25rem; border-radius: var(--radius-md); margin-top: 1.25rem; border: 1px solid var(--border-color);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Hisoblangan Xatar: <span id="riskCalcScore" style="color:var(--neon-cyan);">Katakchani tanlang</span></strong>
+                                <span id="riskCalcCategory" style="font-weight: 700;">—</span>
+                            </div>
+                            <p id="riskCalcAdvice" style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">Matritsadagi istalgan xonaga bosing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 2-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">4-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 4 -->
+            <section class="lesson-section" id="risk-4">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">4-Dars • Hodisalarga Javob</span>
+                    <h2>Incident Response: Kiberhodisalarga Javob Berish Rejasi</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🚨 PICERL Metodologiyasi (6 Bosqich)</h3>
+                    <p>Kiberhujum yuz berganda sarosimaga tushmaslik uchun professional xavfsizlik jamoalari (CSIRT / SOC) quyidagi 6 qat'iy bosqich bo'yicha ish ko'radi:</p>
+                    <ol>
+                        <li><strong>1. Tayyorgarlik (Preparation):</strong> Hujum bo'lishidan oldin reja tuzish, xodimlarni o'qitish, zaxira nusxalarini tekshirish.</li>
+                        <li><strong>2. Aniqlash (Identification):</strong> Tizim buzilganini bilish — qaysi server nishonga olingan, hujum qachon boshlangan.</li>
+                        <li><strong>3. Izolyatsiya (Containment):</strong> Hujumni lokalizatsiya qilish — zararlangan kompyuterni tarmoqdan uzish, xakerning boshqa tizimlarga o'tish yo'lini kesish.</li>
+                        <li><strong>4. Yo'q qilish (Eradication):</strong> Tizimdagi virus, malware, troyan va xaker o'rnatib ketgan barcha yashirin eshiklarni (Backdoor) ildizi bilan tozalash.</li>
+                        <li><strong>5. Qayta tiklash (Recovery):</strong> Tizimni toza zaxira nusxadan tiklash, barcha parollarni yangilash va xizmatni ehtiyotkorlik bilan ishga tushirish.</li>
+                        <li><strong>6. Olingan saboqlar (Lessons Learned):</strong> Hodisani tahlil qilish: "Xaker qayerdan kirdi? Kelgusida bu xatoni qanday qilib takrorlamaymiz?".</li>
+                    </ol>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 3-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">5-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 5 -->
+            <section class="lesson-section" id="risk-5">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">5-Dars • Uzluksizlik</span>
+                    <h2>Biznes Uzluksizligi (BCP) va Falokatdan Tiklanish (DRP)</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🏢 RTO va RPO Tushunchalari</h3>
+                    <p>Falokat yoki keng ko'lamli kiberhujum vaqtida korxona faoliyatini tiklashda ikkita asosiy mezon hisoblanadi:</p>
+                    <ul>
+                        <li><strong>RPO (Recovery Point Objective):</strong> Yo'qotishga ruxsat etiladigan maksimal ma'lumotlar hajmi/vaqti (masalan, "Zaxira har 1 soatda olinadi, demak eng ko'pi bilan 1 soatlik ma'lumot yo'qolishi mumkin").</li>
+                        <li><strong>RTO (Recovery Time Objective):</strong> Tizimni to'xtab qolishdan to'liq ishga tushirishgacha bo'lgan ruxsat etilgan maksimal vaqt (masalan: "Saytimiz uzog'i bilan 2 soatda qayta ishga tushishi shart").</li>
+                    </ul>
+
+                    <div class="cyber-alert cyber-alert-success">
+                        <div class="cyber-alert-icon">✅</div>
+                        <div class="cyber-alert-content">
+                            <h4>Modul Xulosasi</h4>
+                            <p>Kiberxavfsizlikda eng yaxshi mudofaa — rejalashtirilgan mudofaadir. Risk assessment, qat'iy siyosat va Incident Response rejasi har qanday kutilmagan kiberhujumni minimal zarar bilan bartaraf etish kafolatidir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 4-Dars</button>
+                        <a href="cyber-law.html" class="cyber-btn cyber-btn-primary">Keyingi Modul: Qonunchilik va Etika →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/labs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

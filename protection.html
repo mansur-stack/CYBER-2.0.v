@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark" data-module-id="protection">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himoya Usullari — Modul 4 | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Kuchli parollar, Passphrase, MFA/2FA, Antivirus/EDR, 3-2-1 zaxiralash va operatsion tizim himoyasi bo'yicha to'liq amaliy qo'llanma.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link active">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link active">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="module-header">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Bosh sahifa</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="index.html#modules">Modullar</a>
+                <span class="breadcrumb-sep">/</span>
+                <span>Modul 4: Himoya Usullari</span>
+            </nav>
+
+            <div class="section-tag">Modul 4</div>
+            <h1>🛡️ Kiberxavfsizlik Himoya Usullari va Raqamli Gigiyena</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 800px;">
+                Shaxsiy va korporativ ma'lumotlarni ishonchli asrash: kuchli parollar, Passphrase, ko'p omilli autentifikatsiya (MFA/2FA), 3-2-1 zaxiralash qoidasi va zamonaviy endpoint himoyasi.
+            </p>
+
+            <div class="module-meta-bar">
+                <div class="module-meta-item"><span>📚</span> 5 ta amaliy dars</div>
+                <div class="module-meta-item"><span>⏱️</span> ~75 daqiqa o'qish vaqti</div>
+                <div class="module-meta-item"><span>🔑</span> Interaktiv Password Strength Analyzer</div>
+                <div class="module-meta-item"><span>🎯</span> 100% brauzerda xavfsiz</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Module Layout -->
+    <main class="container module-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="module-sidebar">
+            <div class="sidebar-title">
+                <span>Modul Darslari</span>
+                <span class="module-progress-text" id="moduleProgressText">0/5 (0%)</span>
+            </div>
+            <div class="module-progress-track">
+                <div class="module-progress-fill" id="moduleProgressFill" style="width: 0%;"></div>
+            </div>
+
+            <ul class="lesson-nav-list">
+                <li class="lesson-nav-item">
+                    <a href="#prot-1" class="lesson-nav-link active" data-lesson-id="prot-1">
+                        <span>1. Kuchli parollar va Passphrase</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#prot-2" class="lesson-nav-link" data-lesson-id="prot-2">
+                        <span>2. Ko'p omilli autentifikatsiya (MFA/2FA)</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#prot-3" class="lesson-nav-link" data-lesson-id="prot-3">
+                        <span>3. Antivirus va EDR tizimlari</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#prot-4" class="lesson-nav-link" data-lesson-id="prot-4">
+                        <span>4. 3-2-1 Zaxiralash oltin qoidasi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#prot-5" class="lesson-nav-link" data-lesson-id="prot-5">
+                        <span>5. Qurilma va brauzer gigiyenasi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                <a href="cyber-lab.html#lab-password" class="cyber-btn cyber-btn-outline cyber-btn-sm" style="width: 100%;">
+                    🧪 Password Analyzer Lab →
+                </a>
+            </div>
+        </aside>
+
+        <!-- Lessons Content Area -->
+        <article class="lesson-content">
+            <!-- LESSON 1 -->
+            <section class="lesson-section active" id="prot-1">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">1-Dars • Parol Xavfsizligi</span>
+                    <h2>Kuchli Parollar, Passphrase va Entropiya</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🔐 Nega Parollar Zaif?</h3>
+                    <p>
+                        Dunyo statistikasiga ko'ra, kiberhujumlarning 80 foizidan ortig'i aynan o'g'irlangan yoki taxmin qilib topilgan sodda parollar tufayli yuz beradi (masalan: <code>123456</code>, <code>password</code>, <code>admin2024</code>).
+                    </p>
+                    <p>
+                        Xakerlar grafik kartalar (GPU) yordamida soniyasiga yuzlab milliard kombinatsiyalarni sinab ko'radi (Brute-Force). Shuning uchun eng yaxshi yechim — <strong>Passphrase (Parol-ibora)</strong> ishlatishdir!
+                    </p>
+
+                    <!-- Interactive Password Strength Checker Inside Lesson -->
+                    <div class="interactive-simulator-box" id="password-demo">
+                        <div class="simulator-header">
+                            <h4>🔑 Interaktiv Parol Entropiyasi Tahlili</h4>
+                            <span class="cyber-badge badge-green">Lokal & Xavfsiz</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            Parolni kiriting. Tizim uni hech qayerga yubormaydi — faqat brauzer ichida uning xavfsizlik kuchini hisoblaydi:
+                        </p>
+
+                        <div class="password-input-group">
+                            <input type="text" id="passLabInput" class="cyber-input" placeholder="Parol yoki iborani yozib ko'ring..." autocomplete="off">
+                        </div>
+
+                        <div class="meter-bar-track">
+                            <div class="meter-bar-fill" id="passMeterFill"></div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; margin-bottom: 0.75rem;">
+                            <span id="passScoreText">Parolni kiriting</span>
+                            <span id="passCrackTime" style="font-family: var(--font-mono);">—</span>
+                        </div>
+
+                        <div class="pass-criteria-grid">
+                            <div class="criterion-item" id="critLength"><span class="crit-icon">❌</span> Kamida 12 ta belgi</div>
+                            <div class="criterion-item" id="critUpper"><span class="crit-icon">❌</span> Katta harf (A-Z)</div>
+                            <div class="criterion-item" id="critLower"><span class="crit-icon">❌</span> Kichik harf (a-z)</div>
+                            <div class="criterion-item" id="critNumber"><span class="crit-icon">❌</span> Raqam (0-9)</div>
+                            <div class="criterion-item" id="critSpecial"><span class="crit-icon">❌</span> Maxsus belgi (!@#$)</div>
+                        </div>
+                    </div>
+
+                    <h3>💡 Passphrase (Iborali Parol) Yaratish Usuli</h3>
+                    <p>
+                        Murakkab va eslab qolish qiyin bo'lgan <code>X#9$kL@2!</code> o'rniga, bir-biriga mantiqan bog'liq bo'lmagan 4-5 ta so'zdan ibora tuzing:
+                    </p>
+                    <div class="code-snippet-box">
+                        <div class="code-header"><span>Kuchli Passphrase Misollari</span><button type="button" class="copy-code-btn">Nusxa olish</button></div>
+                        <pre>✅ Moviy-Burgut#Samoda.987Parvoz!
+✅ Qovun-Choynak_Osmonda88?Uchar
+✅ Yashil-Qalam!Tog'lar.Orasida2026</pre>
+                    </div>
+                    <p>
+                        Bunday iboralar uzunligi 20+ belgiga yetadi, inson xotirasida oson saqlanadi, lekin xakerning kompyuteri uchun uni buzish millionlab yillik hisoblashni talab qiladi.
+                    </p>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">2-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 2 -->
+            <section class="lesson-section" id="prot-2">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">2-Dars • Autentifikatsiya</span>
+                    <h2>Ko'p Bosqichli Autentifikatsiya (MFA va 2FA)</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🛡️ MFA Uchun 3 Asosiy Ustun</h3>
+                    <p>
+                        Agar parolingiz o'g'irlangan bo'lsa ham, <strong>2FA (Two-Factor Authentication)</strong> yoqilgan bo'lsa, xaker akkauntingizga kira olmaydi. 
+                        Xavfsizlik omillari 3 guruhga bo'linadi:
+                    </p>
+                    <ul>
+                        <li><strong>1. Something you know (Biladigan narsangiz):</strong> Parol, PIN-kod, maxfiy savol.</li>
+                        <li><strong>2. Something you have (Egalik qiladigan narsangiz):</strong> Smartfon (Google Authenticator), apparat xavfsizlik kaliti (YubiKey), bir martalik SMS-kod.</li>
+                        <li><strong>3. Something you are (Shaxsiy xususiyatingiz):</strong> Barmoq izi (Touch ID), yuz qiyofasi (Face ID), ko'z to'r pardasi skaneri.</li>
+                    </ul>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>📱 Authenticator Ilovalari (TOTP)</h4>
+                            <p><strong>Eng tavsiya etiladigan usul.</strong> Google Authenticator yoki Microsoft Authenticator har 30 soniyada yangi 6 xonali kod ishlab chiqaradi. Internet yoki uyali aloqa bo'lmasa ham ishlaydi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>📩 SMS Orqali Tasdiqlash</h4>
+                            <p><strong>Yaxshi, ammo zaif tomonlari bor.</strong> SIM-Swapping (xakerning pasport nusxasi orqali sizning nomingizga yangi SIM-karta ochib olishi) yoki SS7 tarmoq zaifliklari orqali tutib olinishi mumkin.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>🔑 U2F / FIDO2 Apparat Kalitlari</h4>
+                            <p><strong>Mutlaq eng yuqori himoya.</strong> USB yoki NFC orqali kompyuterga ulanadigan jismoniy fleshka-kalit (YubiKey). Fishing hujumlariga qarshi 100% chidamli.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 1-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">3-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 3 -->
+            <section class="lesson-section" id="prot-3">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">3-Dars • Antivirus va EDR</span>
+                    <h2>Antivirus va Endpoint Detection & Response (EDR)</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🔬 Antivirus Qanday Qilib Virusni Taniydi?</h3>
+                    <p>Zamonaviy himoya dasturlari 3 bosqichli tahlilni qo'llaydi:</p>
+                    <ol>
+                        <li><strong>Signatura tahlili (Signature-based):</strong> Faylning xeshini (MD5/SHA-256) ma'lum bo'lgan millionlab viruslar bazasi bilan solishtiradi.</li>
+                        <li><strong>Hevristik tahlil (Heuristics):</strong> Fayl ichidagi kodni tekshirib, xakerlik buyruqlari bor-yo'qligini qidiradi.</li>
+                        <li><strong>Xatti-harakat tahlili (Behavioral / EDR):</strong> Fayl ishga tushgach, uning xotirada nima qilayotganini kuzatadi. Agar dastur to'satdan barcha hujjatlarni shifrlashga yoki tizim fayllarini o'chirishga kirishsa, jarayonni darhol to'xtatadi.</li>
+                    </ol>
+
+                    <div class="cyber-alert cyber-alert-info">
+                        <div class="cyber-alert-icon">🛡️</div>
+                        <div class="cyber-alert-content">
+                            <h4>Windows Defender Yetarlimi?</h4>
+                            <p>Zamonaviy Windows 10 va 11 da o'rnatilgan <strong>Microsoft Defender Antivirus</strong> juda yuqori xavfsizlik reytingiga ega bo'lib, oddiy foydalanuvchi va ko'pgina korxonalar uchun to'liq yetarlidir. Qo'shimcha bepul shubhali antiviruslarni o'rnatish shart emas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 2-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">4-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 4 -->
+            <section class="lesson-section" id="prot-4">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">4-Dars • Zaxira Nusxalash</span>
+                    <h2>Zaxira Nusxalashning "3-2-1" Oltin Qoidasi</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>💾 Ma'lumotlaringizni Ransomware Yo'q Qilmasligi Uchun</h3>
+                    <p>
+                        Dunyo bo'yicha kiberxavfsizlik mutaxassislari e'tirof etgan zaxira qoidasi:
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4 style="color: var(--neon-cyan);">3 Ta Nusxa</h4>
+                            <p>Ma'lumotlaringizning kamida 3 ta to'liq nusxasi bo'lishi kerak: asosiy ishchi fayl va 2 ta mustaqil zaxira nusxasi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4 style="color: var(--warning-orange);">2 Xil Axborot Tashuvchi</h4>
+                            <p>Nusxalar 2 xil turdagi qurilmada saqlanishi kerak (masalan, bittasi noutbukning ichki SSD diskida, ikkinchisi tashqi qattiq diskda yoki NAS xotirasida).</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4 style="color: var(--cyber-green);">1 Ta Uzoqdagi (Off-Site) Nusxa</h4>
+                            <p>Kamida bitta nusxa jismonan boshqa joyda — bulutda (Google Drive, OneDrive, AWS S3) yoki boshqa binoda saqlanishi kerak. Bu yong'in, toshqin yoki o'g'irlikdan asraydi.</p>
+                        </div>
+                    </div>
+
+                    <div class="cyber-alert cyber-alert-warning">
+                        <div class="cyber-alert-icon">⚠️</div>
+                        <div class="cyber-alert-content">
+                            <h4>Offline Zaxira (Air-Gapped Backup)</h4>
+                            <p>Tashqi qattiq diskka zaxira nusxa olgandan so'ng, uning USB kabelini kompyuterdan uzib qo'ying! Agar kompyuterga Ransomware tushsa, ulangan barcha tashqi disklardagi fayllarni ham shifrlab tashlaydi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 3-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">5-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 5 -->
+            <section class="lesson-section" id="prot-5">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">5-Dars • Raqamli Gigiyena</span>
+                    <h2>Qurilma, OS va Brauzer Xavfsizligi Gigiyenasi</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🧹 Kundalik Raqamli Gigiyena Qoidalari</h3>
+                    <ul>
+                        <li><strong>Dasturiy ta'minotni doimiy yangilash (Patching):</strong> Xakerlar dasturlardagi ma'lum bo'lgan teshiklar (Vulnerabilities) orqali hujum qiladi. Yangilanishlar aynan shu teshiklarni yamaydi.</li>
+                        <li><strong>Diskni shifrlash (BitLocker / FileVault):</strong> Noutbukingiz o'g'irlansa ham, qattiq diskdagi fayllarni parolsiz o'qib bo'lmaydi.</li>
+                        <li><strong>Shubhali brauzer kengaytmalarini (Extensions) o'chirish:</strong> Ko'pgina bepul kengaytmalar siz kiritayotgan parollar va ochayotgan sahifalaringizni yashirincha o'g'irlaydi.</li>
+                        <li><strong>Autentifikatsiya parollarini parollar menejerida saqlash:</strong> Bitwarden yoki 1Password orqali har bir saytga alohida, betakror 20 belgili parollar qo'ying.</li>
+                    </ul>
+
+                    <div class="cyber-alert cyber-alert-success">
+                        <div class="cyber-alert-icon">✅</div>
+                        <div class="cyber-alert-content">
+                            <h4>Modul Xulosasi</h4>
+                            <p>Xavfsizlik — bu bir martalik amal emas, balki kundalik odatdir. Passphrase, 2FA, zaxiralash va doimiy yangilanishlar orqali shaxsiy xavfsizligingizni 99 foizga oshirasiz.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 4-Dars</button>
+                        <a href="risk-management.html" class="cyber-btn cyber-btn-primary">Keyingi Modul: Siyosat va Risklar →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/labs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

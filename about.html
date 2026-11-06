@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="uz" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platforma Haqida — Cyber Security Basics 2.0</title>
+    <meta
+      name="description"
+      content="Cyber Security Basics 2.0 platformasi haqida: missiya, kiberxavfsizlik ta'limi prinsiplari, etika manifesti va ko'p beriladigan savollar."
+    />
+    <link rel="icon" href="images/image.png" type="image/png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-brand">
+          <span class="brand-icon">🛡️</span>
+          <span>CYBER <span class="text-gradient">SECURITY</span></span>
+          <span class="brand-badge">2.0</span>
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+            <li>
+              <a href="index.html#modules" class="nav-link">O‘quv modullari</a>
+            </li>
+            <li>
+              <a href="threat-detection.html" class="nav-link">Tahdidlar</a>
+            </li>
+            <li><a href="protection.html" class="nav-link">Himoya</a></li>
+            <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+            <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+            <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+            <li><a href="about.html" class="nav-link active">Haqida</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            id="themeToggleBtn"
+            aria-label="Mavzuni o'zgartirish"
+          >
+            ☀️
+          </button>
+          <button
+            type="button"
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Mobil menyu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Header -->
+    <section class="module-header">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Bosh sahifa</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Platforma Haqida</span>
+        </nav>
+
+        <div class="section-tag">CyberGuard Loyihasi</div>
+        <h1>🛡️ Cyber Security Basics 2.0 Haqida</h1>
+        <p
+          style="
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+          "
+        >
+          O'zbek tilida kiberxavfsizlik madaniyati va axborot xavfsizligi
+          asoslarini professional, qulay va interaktiv shaklda o'rgatuvchi
+          zamonaviy ochiq ta'lim platformasi.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container" style="padding: 3.5rem 1.5rem">
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr;
+          gap: 3rem;
+          margin-bottom: 4rem;
+        "
+      >
+        <div>
+          <h2 style="margin-bottom: 1rem">🎯 Bizning Asosiy Missiyamiz</h2>
+          <p>
+            Raqamli texnologiyalar shiddat bilan rivojlanayotgan davrda
+            kiberxavfsizlik har bir fuqaro, dasturchi va korxona uchun hayotiy
+            zaruratga aylandi. Bizning maqsadimiz — kiberxavfsizlikni murakkab
+            matematik atamalar bilan emas, balki qulay, tushunarli va amaliy
+            laboratoriyalar orqali o'rgatishdir.
+          </p>
+          <p>
+            Platforma 100% ochiq, bepul bo'lib, hech qanday pullik obuna yoki
+            yashirin to'lovlarsiz barcha foydalanuvchilar uchun teng ta'lim
+            imkoniyatini taqdim etadi.
+          </p>
+
+          <h3
+            style="
+              margin-top: 2rem;
+              margin-bottom: 0.75rem;
+              color: var(--neon-cyan);
+            "
+          >
+            ⚖️ Kiber-Etika Manifesti
+          </h3>
+          <p>
+            Ushbu platformadagi barcha bilimlar, kodlar va laboratoriya
+            namunalari
+            <strong
+              >faqat va faqat mudofaa, axborotni himoyalash va xavfsizlik
+              auditini o'rganish</strong
+            >
+            maqsadida yaratilgan.
+          </p>
+          <p>
+            Biz har qanday noqonuniy xakerlik, tizimlarga ruxsatsiz kirish,
+            ma'lumotlarni o'g'irlash yoki kiberhujumlar uyushtirishni
+            qoralaymiz. Haqiqiy mutaxassis o'z bilimini jamiyatni himoya
+            qilishga sarflaydi.
+          </p>
+        </div>
+
+        <div>
+          <div class="cyber-card" style="padding: 2rem">
+            <h3 style="margin-bottom: 1.25rem">📊 Loyiha Raqamlarda</h3>
+            <ul
+              style="
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+              "
+            >
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  border-bottom: 1px solid var(--border-subtle);
+                  padding-bottom: 0.5rem;
+                "
+              >
+                <span>O'quv modullari soni:</span>
+                <strong style="color: var(--neon-cyan)">6 ta modul</strong>
+              </li>
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  border-bottom: 1px solid var(--border-subtle);
+                  padding-bottom: 0.5rem;
+                "
+              >
+                <span>Batafsil darslar:</span>
+                <strong style="color: var(--cyber-green)">30+ dars</strong>
+              </li>
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  border-bottom: 1px solid var(--border-subtle);
+                  padding-bottom: 0.5rem;
+                "
+              >
+                <span>Interaktiv laboratoriyalar:</span>
+                <strong style="color: var(--warning-orange)">6 ta Lab</strong>
+              </li>
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  border-bottom: 1px solid var(--border-subtle);
+                  padding-bottom: 0.5rem;
+                "
+              >
+                <span>Quiz savollari:</span>
+                <strong style="color: var(--electric-blue)">15 ta savol</strong>
+              </li>
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding-bottom: 0.5rem;
+                "
+              >
+                <span>Foydalanish:</span>
+                <strong style="color: var(--cyber-green)">100% Bepul</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cyber-card" style="margin-top: 1.5rem; padding: 1.5rem">
+            <h4 style="margin-bottom: 0.75rem">📬 Bog'lanish & Hamkorlik</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem">
+              Phone: <code>+998 70 110 54 08</code>
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem">
+              Telegram:
+              <a
+                href="https://t.me/IT_Impulse_code"
+                target="_blank"
+                rel="noopener noreferrer"
+                >IT Impulse AI</a
+              >
+              <br />
+              Telegram:
+              <a
+                href="https://t.me/IT_Club_GFU"
+                target="_blank"
+                rel="noopener noreferrer"
+                >IT Club GFU</a
+              >
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0">
+              Savollar, takliflar va xavfsizlik hisobotlari bo'yicha biz bilan
+              bog'lanishingiz mumkin.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="cyber-card" style="padding: 2.5rem; margin-bottom: 3rem">
+        <div class="section-tag">Savol-Javoblar</div>
+        <h2 style="margin-bottom: 1.5rem">Ko'p Beriladigan Savollar (FAQ)</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem">
+          <div class="concept-card">
+            <h4 style="color: var(--neon-cyan)">
+              1. Ushbu kursni o'rganish uchun oldindan dasturlash bilimi
+              kerakmi?
+            </h4>
+            <p>
+              Yo'q! Darslar boshlang'ich tushunchalardan boshlab
+              bosqichma-bosqich tushuntirilgan. Asosiy maqsad — har qanday
+              kompyuter foydalanuvchisi o'zini kiberxavflardan asrashni
+              o'rganishidir.
+            </p>
+          </div>
+
+          <div class="concept-card">
+            <h4 style="color: var(--neon-cyan)">
+              2. O'quv natijalari va test ballarim qayerda saqlanadi?
+            </h4>
+            <p>
+              Barcha natijalaringiz (tugatilgan darslar, quiz bali, faollik
+              kunlari) xavfsiz tarzda brauzeringizning
+              <code>LocalStorage</code> xotirasida saqlanadi. Hech qanday
+              shaxsiy ma'lumotingiz tashqi serverlarga yuborilmaydi.
+            </p>
+          </div>
+
+          <div class="concept-card">
+            <h4 style="color: var(--neon-cyan)">
+              3. Cyber Lab simulyatorlaridan foydalanish xavfsizmi?
+            </h4>
+            <p>
+              Ha, mutlaqo 100% xavfsiz. Caesar Cipher, Password Analyzer va
+              Phishing Challenge kabi barcha laboratoriyalar faqat sizning
+              brauzeringiz ichida matematik tarzda hisoblanadi va real tarmoqqa
+              hech qanday zarar yetkazmaydi.
+            </p>
+          </div>
+
+          <div class="concept-card">
+            <h4 style="color: var(--neon-cyan)">
+              4. Kursni tugatgach nima qilish tavsiya etiladi?
+            </h4>
+            <p>
+              15 savollik yakuniy Quizni topshirib natijangizni tekshiring. Zaif
+              mavzular bo'yicha darslarni qayta o'qib chiqing va xalqaro
+              sertifikatlar (CompTIA Security+, CEH) ga tayyorgarlik ko'rishni
+              davom ettiring.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+          <button type="button" class="back-to-top-btn" id="backToTopBtn">
+            Yuqoriga ⬆️
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

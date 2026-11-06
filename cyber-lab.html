@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Lab — Interaktiv Kiberxavfsizlik Laboratoriyasi | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Kiberxavfsizlik bo'yicha 6 ta interaktiv laboratoriya: Parol tahlili, Sezar shifri, Phishing tekshiruvi, Termashunoslik, Risk matritsasi va Kiber-senariylar.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link active">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Lab Hero -->
+    <section class="module-header">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Bosh sahifa</a>
+                <span class="breadcrumb-sep">/</span>
+                <span>Cyber Lab</span>
+            </nav>
+
+            <div class="section-tag">Amaliy Mashg'ulotlar</div>
+            <h1>🧪 Interaktiv Cyber Lab (Kiber-Laboratoriya)</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 820px;">
+                Nazariy bilimlarni mustahkamlash uchun 6 ta xavfsiz laboratoriya simulyatori. Barcha amaliyotlar mutlaqo xavfsiz va faqat sizning brauzeringiz ichida ta'lim maqsadida ishlaydi.
+            </p>
+        </div>
+    </section>
+
+    <!-- Labs Container -->
+    <main class="container" style="padding: 3.5rem 1.5rem;">
+        <!-- LAB 1: PASSWORD STRENGTH ANALYZER -->
+        <div class="lab-card reveal" id="lab-password">
+            <div class="lab-header">
+                <div class="lab-title-area">
+                    <h3><span>🔑</span> 1. Password Strength & Entropy Analyzer</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Parolning matematik chidamliligi va entropiya darajasini aniqlash</p>
+                </div>
+                <span class="cyber-badge badge-green">Lokal & Xavfsiz</span>
+            </div>
+
+            <div class="lab-guide-box">
+                <strong>🎯 Maqsad:</strong> Parol uzunligi va turli xil belgilar (registr, son, belgilar) to'plami parolni brute-force orqali buzish vaqtiga qanday ta'sir qilishini ko'rish. Parollar hech qayerga yuborilmaydi.
+            </div>
+
+            <div class="password-input-group">
+                <input type="text" id="passLabInput" class="cyber-input" placeholder="Parol yoki iborani sinab ko'ring (masalan: Moviy-Burgut#Samoda.987Parvoz!)..." autocomplete="off">
+            </div>
+
+            <div class="meter-bar-track">
+                <div class="meter-bar-fill" id="passMeterFill"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                <span id="passScoreText" style="font-family: var(--font-mono);">Parol kiriting</span>
+                <span id="passCrackTime" style="font-family: var(--font-mono); color: var(--text-main);">—</span>
+            </div>
+
+            <div class="pass-criteria-grid">
+                <div class="criterion-item" id="critLength"><span class="crit-icon">❌</span> Kamida 12 belgi</div>
+                <div class="criterion-item" id="critUpper"><span class="crit-icon">❌</span> Katta harflar (A-Z)</div>
+                <div class="criterion-item" id="critLower"><span class="crit-icon">❌</span> Kichik harflar (a-z)</div>
+                <div class="criterion-item" id="critNumber"><span class="crit-icon">❌</span> Raqamlar (0-9)</div>
+                <div class="criterion-item" id="critSpecial"><span class="crit-icon">❌</span> Maxsus belgilar (!@#$%^&*)</div>
+            </div>
+        </div>
+
+        <!-- LAB 2: CAESAR CIPHER SIMULATOR -->
+        <div class="lab-card reveal" id="lab-caesar">
+            <div class="lab-header">
+                <div class="lab-title-area">
+                    <h3><span>🏛️</span> 2. Caesar Cipher (Sezar Shifri) Simulyatori</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Harflarni siljitish asosidagi klassik shifrlash va deshifrlash</p>
+                </div>
+                <span class="cyber-badge badge-cyan">Kriptotarix</span>
+            </div>
+
+            <div class="lab-guide-box">
+                <strong>🎯 Maqsad:</strong> Qadimgi Rimda harbiy buyruqlarni yashirish uchun ishlatilgan siljitish algoritmining ishlashini amalda ko'rish. Slayderni surib siljish kalitini o'zgartiring.
+            </div>
+
+            <div class="cipher-grid">
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Ochiq Matn (Plaintext):</label>
+                    <textarea id="caesarInput" class="cyber-input" rows="4">KIBERXAVFSIZLIK AKADEMIYASI</textarea>
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Shifrlangan Natija (Ciphertext):</label>
+                    <textarea id="caesarOutput" class="cyber-input" rows="4" readonly style="color: var(--cyber-green);"></textarea>
+                </div>
+            </div>
+
+            <div class="cipher-slider-group">
+                <span style="font-family: var(--font-mono); font-size: 0.95rem; white-space: nowrap;">
+                    Kalit (Siljish): <strong id="caesarShiftVal" style="color: var(--neon-cyan);">3</strong>
+                </span>
+                <input type="range" min="1" max="25" value="3" class="cipher-range" id="caesarShift">
+            </div>
+        </div>
+
+        <!-- LAB 3: PHISHING DETECTION CHALLENGE -->
+        <div class="lab-card reveal" id="lab-phishing">
+            <div class="lab-header">
+                <div class="lab-title-area">
+                    <h3><span>🎣</span> 3. Phishing Detection Challenge</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Soxta xatdagi 5 ta kiber-xavfli belgini toping</p>
+                </div>
+                <span class="cyber-badge badge-orange" id="phishingFoundCount">0/5 Topildi</span>
+            </div>
+
+            <div class="lab-guide-box">
+                <strong>🎯 Maqsad:</strong> Ijtimoiy muhandislik xatlarini tahlil qilishni o'rganish. Matndagi shubhali elementlarni (qizil hoshiyali joylarni) bosing va qizil bayroqlarni aniqlang.
+            </div>
+
+            <div class="phishing-email-mockup">
+                <div class="email-meta-header">
+                    <div style="font-size: 0.9rem; margin-bottom: 0.4rem;">
+                        <strong>Kimdan:</strong> 
+                        <span class="phishing-spot" data-explanation="Soxta domen! Rasmiy to'lov tizimlari hech qachon 'support@payme-secure.cc' yoki shubhali bepul domenlardan xabar yubormaydi.">security-alert@payme-secure.cc</span>
+                    </div>
+                    <div style="font-size: 0.9rem;">
+                        <strong>Mavzu:</strong> 
+                        <span class="phishing-spot" data-explanation="Sun'iy shoshilinchlik va qo'rqitish. Fishing hujumchilari har doim 'Darhol!', '24 soat ichida' deb odamni stressga soladi.">DIQQAT: Hisobingiz 24 soat ichida butunlay bloklanadi!</span>
+                    </div>
+                </div>
+                <div class="email-body-content">
+                    <p>
+                        <span class="phishing-spot" data-explanation="Ism-sharifsiz umumiy murojaat. Haqiqiy bank sizning ismingizni biladi va xatni shaxsan sizga yo'llaydi.">Hurmatli foydalanuvchi!</span>
+                    </p>
+                    <p>
+                        Xavfsizlik tizimi sizning akkauntingizda shubhali kirishni aniqladi. 
+                        <span class="phishing-spot" data-explanation="Grammatik xatolar va soxta ultimatum. O'zbek tilidagi rasmiy xatlarda bunday noo'rin so'zlar bo'lmaydi.">Agar darhol parolingizni tasdiqlamasangiz, hisobingizdagi pullar muzlatiladi.</span>
+                    </p>
+                    <p style="margin: 1.75rem 0;">
+                        <span class="phishing-spot" data-explanation="Soxta havola! Tugma ustiga sichqonchani olib borganda brauzer pastida ko'rinadigan haqiqiy havola (http://payme-login.xyz/steal) xakerlik saytiga olib boradi.">👉 [ SHU YERGA BOSING VA MA'LUMOTLARINGIZNI TASDIQLANG ]</span>
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Hurmat bilan, Xavfsizlik bo'limi.</p>
+                </div>
+            </div>
+
+            <div id="phishingDetailBox" class="cyber-alert cyber-alert-warning" style="display: none; margin-top: 1.5rem;"></div>
+        </div>
+
+        <!-- LAB 4: TERMINOLOGY MATCHING CHALLENGE -->
+        <div class="lab-card reveal" id="lab-terminology">
+            <div class="lab-header">
+                <div class="lab-title-area">
+                    <h3><span>🧩</span> 4. Cybersecurity Terminology Challenge</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Kiberxavfsizlik atamalarini to'g'ri ta'riflari bilan birlashtiring</p>
+                </div>
+                <span class="cyber-badge badge-blue" id="termMatchScore">0/4 Moslandi</span>
+            </div>
+
+            <div class="lab-guide-box">
+                <strong>🎯 Maqsad:</strong> Avval yuqoridagi atamani bosing, so'ngra pastdagi mos ta'rif kartochkasini tanlang.
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                <button type="button" class="cyber-btn cyber-btn-outline term-chip" data-term="cia">CIA Triad</button>
+                <button type="button" class="cyber-btn cyber-btn-outline term-chip" data-term="ransom">Ransomware</button>
+                <button type="button" class="cyber-btn cyber-btn-outline term-chip" data-term="zeroday">Zero-Day Zaiflik</button>
+                <button type="button" class="cyber-btn cyber-btn-outline term-chip" data-term="mitm">Man-in-the-Middle</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div class="concept-card def-card" data-matches="cia">
+                    <strong>Uchlik Modeli:</strong> Axborot xavfsizligining tayanchi: Maxfiylik, Butunlik va Foydalana olishlik tamoyillari.
+                </div>
+                <div class="concept-card def-card" data-matches="ransom">
+                    <strong>Tovlamachi Dastur:</strong> Jabrlanuvchining shaxsiy fayllarini shifrlab, kalit evaziga to'lov talab qiluvchi zararli kod.
+                </div>
+                <div class="concept-card def-card" data-matches="zeroday">
+                    <strong>Nol-Kunlik Teshik:</strong> Dastur ishlab chiqaruvchisiga hali noma'lum bo'lgan va yamoq (patch) chiqarilmagan yangi zaiflik.
+                </div>
+                <div class="concept-card def-card" data-matches="mitm">
+                    <strong>Oraliqdagi Hujum:</strong> Hujumchi foydalanuvchi va server o'rtasidagi aloqa kanaliga yashirincha suqilib kirishi va ma'lumotlarni o'g'irlashi.
+                </div>
+            </div>
+        </div>
+
+        <!-- LAB 5: RISK ASSESSMENT MATRIX (5x5) -->
+        <div class="lab-card reveal" id="lab-risk">
+            <div class="lab-header">
+                <div class="lab-title-area">
+                    <h3><span>📊</span> 5. Risk Assessment Matrix Simulator (5x5)</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Ehtimollik × Ta'sir asosida xatarlarni professional baholash</p>
+                </div>
+                <span class="cyber-badge badge-orange">NIST Standarti</span>
+            </div>
+
+            <div class="lab-guide-box">
+                <strong>🎯 Maqsad:</strong> Jadvaldagi katakchani tanlab xatar miqdorini hisoblang va qanday chora ko'rish zarurligini bilib oling.
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="risk-matrix-table">
+                    <thead>
+                        <tr>
+                            <th style="font-size: 0.75rem; color: var(--text-muted); text-align: left;">Ehtimollik ↓ / Ta'sir →</th>
+                            <th style="font-size: 0.75rem; color: var(--text-muted);">1: Ahamiyatsiz</th>
+                            <th style="font-size: 0.75rem; color: var(--text-muted);">2: Kichik</th>
+                            <th style="font-size: 0.75rem; color: var(--text-muted);">3: O'rtacha</th>
+                            <th style="font-size: 0.75rem; color: var(--text-muted);">4: Katta</th>
+                            <th style="font-size: 0.75rem; color: var(--text-muted);">5: Halokatli</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600; font-size: 0.8rem;">5: Juda Yuqori</td>
+                            <td class="risk-cell risk-med" data-l="5" data-i="1">5 M</td>
+                            <td class="risk-cell risk-high" data-l="5" data-i="2">10 H</td>
+                            <td class="risk-cell risk-high" data-l="5" data-i="3">15 H</td>
+                            <td class="risk-cell risk-crit" data-l="5" data-i="4">20 C</td>
+                            <td class="risk-cell risk-crit" data-l="5" data-i="5">25 C</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; font-size: 0.8rem;">4: Yuqori</td>
+                            <td class="risk-cell risk-low" data-l="4" data-i="1">4 L</td>
+                            <td class="risk-cell risk-med" data-l="4" data-i="2">8 M</td>
+                            <td class="risk-cell risk-high" data-l="4" data-i="3">12 H</td>
+                            <td class="risk-cell risk-high" data-l="4" data-i="4">16 H</td>
+                            <td class="risk-cell risk-crit" data-l="4" data-i="5">20 C</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; font-size: 0.8rem;">3: O'rtacha</td>
+                            <td class="risk-cell risk-low" data-l="3" data-i="1">3 L</td>
+                            <td class="risk-cell risk-med" data-l="3" data-i="2">6 M</td>
+                            <td class="risk-cell risk-med" data-l="3" data-i="3">9 M</td>
+                            <td class="risk-cell risk-high" data-l="3" data-i="4">12 H</td>
+                            <td class="risk-cell risk-high" data-l="3" data-i="5">15 H</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; font-size: 0.8rem;">2: Kam</td>
+                            <td class="risk-cell risk-low" data-l="2" data-i="1">2 L</td>
+                            <td class="risk-cell risk-low" data-l="2" data-i="2">4 L</td>
+                            <td class="risk-cell risk-med" data-l="2" data-i="3">6 M</td>
+                            <td class="risk-cell risk-med" data-l="2" data-i="4">8 M</td>
+                            <td class="risk-cell risk-high" data-l="2" data-i="5">10 H</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; font-size: 0.8rem;">1: Kamdan-kam</td>
+                            <td class="risk-cell risk-low" data-l="1" data-i="1">1 L</td>
+                            <td class="risk-cell risk-low" data-l="1" data-i="2">2 L</td>
+                            <td class="risk-cell risk-low" data-l="1" data-i="3">3 L</td>
+                            <td class="risk-cell risk-low" data-l="1" data-i="4">4 L</td>
+                            <td class="risk-cell risk-med" data-l="1" data-i="5">5 M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="background: rgba(5,11,22,0.8); padding: 1.25rem; border-radius: var(--radius-md); margin-top: 1.25rem; border: 1px solid var(--border-color);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <strong>Tanlangan Xatar Balli: <span id="riskCalcScore" style="color: var(--neon-cyan);">Katakchani bosing</span></strong>
+                    <span id="riskCalcCategory" style="font-weight: 700;">—</span>
+                </div>
+                <p id="riskCalcAdvice" style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Matritsadagi istalgan katakka bosib tahlil qiling.</p>
+            </div>
+        </div>
+
+        <!-- LAB 6: SECURITY DECISION SCENARIOS -->
+        <div class="lab-card reveal" id="lab-scenarios">
+            <div class="lab-header">
+                <div class="lab-title-area">
+                    <h3><span>🎮</span> 6. Kiber-Hodisa Bo'yicha Qaror Qabul Qilish Senariysi</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Real kiber-vaziyatlarda to'g'ri mudofaa yo'lini tanlang</p>
+                </div>
+                <span class="cyber-badge badge-green">Amaliy Keys</span>
+            </div>
+
+            <div class="scenario-card" style="background: rgba(5,11,22,0.6); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem; color: var(--neon-cyan);">
+                    Vaziyat: Ishxonangizdagi kompyuterda kutilmaganda "Fayllaringiz shifrlandi! 0.5 BTC to'lang" degan oyna paydo bo'ldi.
+                </h4>
+                <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+                    Sizning zudlik bilan birinchi qiladigan to'g'ri amalingiz qaysi bo'lishi kerak?
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <button type="button" class="cyber-btn cyber-btn-outline scenario-opt-btn" data-correct="false" data-feedback="Xato! Kompyuterni o'chirib-yoqish shifrlash jarayonini yanada chuqurlashtirishi yoki xotiradagi (RAM) qimmatli kiber-dalillarni o'chirib yuborishi mumkin.">
+                        A) Kompyuterni tezda o'chirib (reboot qilib) qayta yoqish
+                    </button>
+                    <button type="button" class="cyber-btn cyber-btn-outline scenario-opt-btn" data-correct="false" data-feedback="Xato! Hech qachon tovlamachilarga to'lov qilmang — bu ularni yanada ko'proq hujum qilishga undaydi va kalit berilishini kafolatlamaydi.">
+                        B) Ko'rsatilgan kripto-hamyonga darhol to'lov qilish
+                    </button>
+                    <button type="button" class="cyber-btn cyber-btn-outline scenario-opt-btn" data-correct="true" data-feedback="A'lo qaror! Zararlangan qurilmani tarmoqdan (LAN kabeli va Wi-Fi) zudlik bilan uzish — Ransomware-ning boshqa server va kompyuterlarga tarqalishini to'xtatuvchi eng muhim birinchi qadamdir.">
+                        C) Kompyuterni tarmoqdan (Wi-Fi va tarmoq kabelidan) darhol uzish va xavfsizlik mutaxassisiga xabar berish
+                    </button>
+                </div>
+
+                <div class="scenario-feedback cyber-alert cyber-alert-info" style="display: none; margin-top: 1.25rem;"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/labs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

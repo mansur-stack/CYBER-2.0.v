@@ -1,0 +1,403 @@
+/* ==========================================================================
+   CYBER SECURITY BASICS 2.0 — MODULE & LESSON STYLES
+   Sidebar, Lesson Content, Breadcrumbs, Progress, Interactive Widgets
+   ========================================================================== */
+
+/* Reading Progress Bar (Fixed Top) */
+.reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gradient-accent);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    z-index: 1002;
+    width: 0%;
+    transition: width 0.1s ease-out;
+}
+
+/* Module Hero / Header */
+.module-header {
+    padding: 4rem 0 2.5rem;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-nav a {
+    color: var(--text-secondary);
+}
+
+.breadcrumb-nav a:hover {
+    color: var(--neon-cyan);
+}
+
+.breadcrumb-sep {
+    color: var(--border-bright);
+}
+
+.module-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.module-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+/* 2-Column Lesson Layout */
+.module-layout {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    padding: clamp(1.5rem, 4vw, 3rem) 0;
+    align-items: start;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Sticky Module Sidebar */
+.module-sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    max-height: calc(100vh - var(--header-height) - 3rem);
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    color: var(--neon-cyan);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.module-progress-text {
+    font-size: 0.75rem;
+    color: var(--cyber-green);
+}
+
+.module-progress-track {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.module-progress-fill {
+    height: 100%;
+    background: var(--gradient-success);
+    transition: width 0.3s ease;
+}
+
+.lesson-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lesson-nav-item {
+    margin-bottom: 0.4rem;
+}
+
+.lesson-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    transition: var(--transition-fast);
+}
+
+.lesson-nav-link:hover {
+    background: rgba(0, 229, 255, 0.08);
+    color: var(--text-main);
+}
+
+.lesson-nav-link.active {
+    background: var(--neon-cyan-subtle);
+    border-color: var(--border-bright);
+    color: var(--neon-cyan);
+    font-weight: 600;
+}
+
+.lesson-check-icon {
+    font-size: 0.85rem;
+    color: var(--cyber-green);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.lesson-nav-item.completed .lesson-check-icon {
+    opacity: 1;
+}
+
+/* Lesson Content Area */
+.lesson-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.2rem, 3.5vw, 2.75rem);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.lesson-section {
+    display: none;
+    animation: fadeIn 0.35s ease;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.lesson-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.lesson-header {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.lesson-number-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--neon-cyan);
+    background: var(--neon-cyan-subtle);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
+}
+
+.lesson-body {
+    font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+    line-height: 1.8;
+    color: var(--text-main);
+    width: 100%;
+    min-width: 0;
+}
+
+.lesson-body h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--neon-cyan);
+    font-size: clamp(1.15rem, 3vw, 1.35rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.lesson-body p {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    overflow-wrap: break-word;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+.concept-card {
+    background: rgba(5, 11, 22, 0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: clamp(1rem, 2.5vw, 1.25rem);
+    transition: var(--transition-fast);
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.concept-card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-2px);
+}
+
+.concept-card h4 {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    overflow-wrap: break-word;
+}
+
+.concept-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+}
+
+/* Code Snippet Box with Copy Button */
+.code-snippet-box {
+    position: relative;
+    background: #060D1A;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin: 1.5rem 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0A1426;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    font-family: var(--font-mono);
+    font-size: clamp(0.72rem, 2vw, 0.8rem);
+    color: var(--text-muted);
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.code-header span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.copy-code-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--neon-cyan);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.copy-code-btn:hover {
+    background: var(--neon-cyan-subtle);
+}
+
+.code-snippet-box pre {
+    padding: clamp(0.85rem, 2.5vw, 1.25rem);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    font-family: var(--font-mono);
+    font-size: clamp(0.72rem, 2.2vw, 0.88rem);
+    color: #A5D6A7;
+    line-height: 1.6;
+}
+
+/* Lesson Footer & Actions */
+.lesson-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.mark-completed-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--cyber-green);
+    color: var(--cyber-green);
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.mark-completed-btn:hover,
+.mark-completed-btn.completed {
+    background: var(--cyber-green);
+    color: #050B16;
+    box-shadow: var(--glow-green);
+}
+
+.lesson-pagination-btns {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Interactive Embedded Simulator in Lessons */
+.interactive-simulator-box {
+    background: rgba(6, 13, 26, 0.9);
+    border: 1px solid var(--neon-cyan);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    margin: 2rem 0;
+    box-shadow: 0 0 20px var(--neon-cyan-subtle);
+}
+
+.simulator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.simulator-header h4 {
+    color: var(--neon-cyan);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

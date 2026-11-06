@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaxsiy Dashboard — O'quv Natijalari | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Kiberxavfsizlik o'quv natijalari, yakunlangan darslar, quiz ballari va o'quv faolligi (streak) monitoringi.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link active">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Header -->
+    <section class="module-header">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Bosh sahifa</a>
+                <span class="breadcrumb-sep">/</span>
+                <span>Dashboard</span>
+            </nav>
+
+            <div class="section-tag">Ta'lim Monitoringi</div>
+            <h1>📊 Shaxsiy O'quv Dashboardi</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 800px;">
+                Darslarni o'zlashtirish jarayoni, faollik kunlari (streak), quiz natijalari va tavsiya etilgan keyingi darslar.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Dashboard View -->
+    <main class="container" id="dashboardView" style="padding: 3.5rem 1.5rem;">
+        <!-- Top 4 Metrics Grid -->
+        <div class="dashboard-stats-grid">
+            <div class="stat-metric-card">
+                <div class="stat-metric-icon">📖</div>
+                <div class="stat-metric-info">
+                    <h4 id="dashCompletedCount">0 / 30</h4>
+                    <p>Tugatilgan darslar</p>
+                </div>
+            </div>
+
+            <div class="stat-metric-card">
+                <div class="stat-metric-icon" style="color: var(--cyber-green); background: var(--cyber-green-subtle);">📈</div>
+                <div class="stat-metric-info">
+                    <h4 id="dashProgressPct" style="color: var(--cyber-green);">0%</h4>
+                    <p>Umumiy progress</p>
+                </div>
+            </div>
+
+            <div class="stat-metric-card">
+                <div class="stat-metric-icon" style="color: var(--warning-orange); background: var(--warning-orange-subtle);">🔥</div>
+                <div class="stat-metric-info">
+                    <h4 id="dashStreakCount" style="color: var(--warning-orange);">1 Kun</h4>
+                    <p>O'quv faolligi (Streak)</p>
+                </div>
+            </div>
+
+            <div class="stat-metric-card">
+                <div class="stat-metric-icon" style="color: var(--neon-cyan); background: var(--neon-cyan-subtle);">🎯</div>
+                <div class="stat-metric-info">
+                    <h4 id="dashBestScore" style="color: var(--neon-cyan);">—</h4>
+                    <p>Quiz eng yaxshi ball</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overall Progress Bar Card -->
+        <div class="cyber-card" style="margin-bottom: 2.5rem; padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <h3 style="font-size: 1.25rem;">Umumiy Kursni O'zlashtirish</h3>
+                <span class="cyber-badge badge-green">30 Dars</span>
+            </div>
+            <div style="height: 10px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; margin-bottom: 1rem;">
+                <div id="dashOverallBar" style="height: 100%; width: 0%; background: var(--gradient-accent); transition: width 0.4s ease; box-shadow: 0 0 10px var(--neon-cyan);"></div>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+                💡 <em>Izoh: Ma'lumotlar brauzeringizning LocalStorage xotirasida avtomatik saqlanib boriladi.</em>
+            </p>
+        </div>
+
+        <!-- Recommended Next Lesson Banner -->
+        <div class="cyber-card" id="dashRecommendedBox" style="margin-bottom: 2.5rem; border-color: var(--border-bright);">
+            <!-- Injected by dashboard.js -->
+        </div>
+
+        <!-- Module Breakdown Grid -->
+        <h3 style="margin-bottom: 1.5rem;">6 Ta Modul Bo'yicha Natijalar:</h3>
+        <div class="module-progress-cards-grid" id="dashModulesGrid">
+            <!-- Injected by dashboard.js -->
+        </div>
+
+        <!-- Quiz History Section -->
+        <div class="cyber-card" style="margin-top: 2.5rem; padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                <h3>Oxirgi Quiz Sinovlari Tarixi</h3>
+                <a href="quiz.html" class="cyber-btn cyber-btn-primary cyber-btn-sm">
+                    🎯 Yangi Quiz Topshirish →
+                </a>
+            </div>
+            <div id="dashQuizHistoryList">
+                <!-- Injected by dashboard.js -->
+            </div>
+        </div>
+
+        <!-- Reset Progress Section -->
+        <div style="margin-top: 3rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+            <button type="button" class="cyber-btn cyber-btn-outline cyber-btn-sm" id="dashResetProgressBtn" style="color: var(--danger-red); border-color: rgba(255, 69, 96, 0.3);">
+                🗑️ Barcha Natijalarni Qayta Tiklash (Reset)
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

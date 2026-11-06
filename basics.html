@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="uz" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Kiberxavfsizlik Asoslari — O'quv Modullari | Cyber Security Basics 2.0
+    </title>
+    <meta
+      name="description"
+      content="Kiberxavfsizlik asoslari bo'yicha to'liq 6 ta o'quv moduli va darslar mundarijasi."
+    />
+    <link rel="icon" href="images/image.png" type="image/png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-brand">
+          <span class="brand-icon">🛡️</span>
+          <span>CYBER <span class="text-gradient">SECURITY</span></span>
+          <span class="brand-badge">2.0</span>
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+            <li>
+              <a href="index.html#modules" class="nav-link active"
+                >O‘quv modullari</a
+              >
+            </li>
+            <li>
+              <a href="threat-detection.html" class="nav-link">Tahdidlar</a>
+            </li>
+            <li><a href="protection.html" class="nav-link">Himoya</a></li>
+            <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+            <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+            <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+            <li><a href="about.html" class="nav-link">Haqida</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            id="themeToggleBtn"
+            aria-label="Mavzuni o'zgartirish"
+          >
+            ☀️
+          </button>
+          <button
+            type="button"
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Mobil menyu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Header -->
+    <section class="module-header">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Bosh sahifa</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Asoslar & Modullar</span>
+        </nav>
+
+        <div class="section-tag">O'quv Mundarijasi 2.0</div>
+        <h1>📚 Kiberxavfsizlik Asoslari O'quv Dasturi</h1>
+        <p
+          style="
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+          "
+        >
+          Platforma Cyber Security Basics 2.0 versiyasiga to'liq yangilandi.
+          Barcha darslar 6 ta chuqurlashtirilgan interaktiv modulga bo'lingan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Modules Grid -->
+    <main class="container" style="padding: 3.5rem 1.5rem">
+      <div class="cyber-alert cyber-alert-info" style="margin-bottom: 2.5rem">
+        <div class="cyber-alert-icon">⚡</div>
+        <div class="cyber-alert-content">
+          <h4>Yangi 2.0 Tizim Ishga Tushirildi</h4>
+          <p>
+            O'rganishni boshlash uchun quyidagi modullardan birini tanlang. Har
+            bir modul 5 ta batafsil dars, amaliy misollar va interaktiv
+            laboratoriyalarni o'z ichiga oladi.
+          </p>
+        </div>
+      </div>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-card-header">
+            <div class="module-icon">🔐</div>
+            <span class="cyber-badge badge-cyan">Modul 1</span>
+          </div>
+          <div class="module-card-body">
+            <h3>1. Kriptografiya</h3>
+            <p>
+              Shifrlash, xesh-funksiyalar, AES, RSA, raqamli imzo va interaktiv
+              Caesar Cipher simulyatori.
+            </p>
+          </div>
+          <div class="module-card-footer">
+            <span class="module-lessons-count">5 ta dars</span>
+            <a
+              href="cryptography.html"
+              class="cyber-btn cyber-btn-primary cyber-btn-sm"
+              >Darslarga o'tish →</a
+            >
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card-header">
+            <div class="module-icon">🌐</div>
+            <span class="cyber-badge badge-blue">Modul 2</span>
+          </div>
+          <div class="module-card-body">
+            <h3>2. Tarmoq Xavfsizligi</h3>
+            <p>
+              TCP/IP, OSI 7 pog'onali modeli, Firewall, VPN, DNS xavfsizligi va
+              Wi-Fi WPA3 standarti.
+            </p>
+          </div>
+          <div class="module-card-footer">
+            <span class="module-lessons-count">5 ta dars</span>
+            <a
+              href="network-security.html"
+              class="cyber-btn cyber-btn-primary cyber-btn-sm"
+              >Darslarga o'tish →</a
+            >
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card-header">
+            <div class="module-icon">⚠️</div>
+            <span class="cyber-badge badge-orange">Modul 3</span>
+          </div>
+          <div class="module-card-body">
+            <h3>3. Tahdidlarni Aniqlash</h3>
+            <p>
+              Viruslar, Ransomware, Phishing hujumlari, DoS/DDoS, SQL Injection
+              va shubhali faollik monitoringi.
+            </p>
+          </div>
+          <div class="module-card-footer">
+            <span class="module-lessons-count">5 ta dars</span>
+            <a
+              href="threat-detection.html"
+              class="cyber-btn cyber-btn-primary cyber-btn-sm"
+              >Darslarga o'tish →</a
+            >
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card-header">
+            <div class="module-icon">🛡️</div>
+            <span class="cyber-badge badge-green">Modul 4</span>
+          </div>
+          <div class="module-card-body">
+            <h3>4. Himoya Usullari</h3>
+            <p>
+              Kuchli parollar, Passphrase, ko'p omilli autentifikatsiya (MFA),
+              3-2-1 zaxiralash va antivirus/EDR.
+            </p>
+          </div>
+          <div class="module-card-footer">
+            <span class="module-lessons-count">5 ta dars</span>
+            <a
+              href="protection.html"
+              class="cyber-btn cyber-btn-primary cyber-btn-sm"
+              >Darslarga o'tish →</a
+            >
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card-header">
+            <div class="module-icon">📋</div>
+            <span class="cyber-badge badge-orange">Modul 5</span>
+          </div>
+          <div class="module-card-body">
+            <h3>5. Siyosat va Risklar</h3>
+            <p>
+              Axborot xavfsizligi siyosati, CIA Triadasi, risk assessment
+              matritsasi va Incident Response rejasi.
+            </p>
+          </div>
+          <div class="module-card-footer">
+            <span class="module-lessons-count">5 ta dars</span>
+            <a
+              href="risk-management.html"
+              class="cyber-btn cyber-btn-primary cyber-btn-sm"
+              >Darslarga o'tish →</a
+            >
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card-header">
+            <div class="module-icon">⚖️</div>
+            <span class="cyber-badge badge-cyan">Modul 6</span>
+          </div>
+          <div class="module-card-body">
+            <h3>6. Qonunchilik va Etika</h3>
+            <p>
+              Kiberetika, White Hat vs Black Hat, shaxsiy ma'lumotlar huquqi va
+              O'zbekiston kiberxavfsizlik qonunlari.
+            </p>
+          </div>
+          <div class="module-card-footer">
+            <span class="module-lessons-count">5 ta dars</span>
+            <a
+              href="cyber-law.html"
+              class="cyber-btn cyber-btn-primary cyber-btn-sm"
+              >Darslarga o'tish →</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+          <button type="button" class="back-to-top-btn" id="backToTopBtn">
+            Yuqoriga ⬆️
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

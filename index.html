@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="uz" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBER SECURITY BASICS 2.0 — Kiberxavfsizlik Akademiyasi</title>
+    <meta
+      name="description"
+      content="Kiberxavfsizlikni noldan professional darajagacha o'rganing. Kriptografiya, tarmoq xavfsizligi, kiberhujumlar va himoya usullari bo'yicha 30+ interaktiv dars va laboratoriyalar."
+    />
+
+    <!-- Open Graph / Meta -->
+    <meta
+      property="og:title"
+      content="Cyber Security Basics 2.0 — Kiberxavfsizlik Akademiyasi"
+    />
+    <meta
+      property="og:description"
+      content="Kiberxavfsizlikni noldan professional darajagacha o'rganing. 30+ dars, Cyber Lab va 15 savollik test."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/image.png" type="image/png" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Reading / Nav Progress Placeholder -->
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+    <!-- Navigation Bar -->
+    <header class="cyber-navbar">
+      <div class="container nav-inner">
+        <a
+          href="index.html"
+          class="nav-brand"
+          aria-label="Cyber Security Basics bosh sahifa"
+        >
+          <span class="brand-icon">🛡️</span>
+          <span>CYBER <span class="text-gradient">SECURITY</span></span>
+          <span class="brand-badge">2.0.V</span>
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li>
+              <a href="index.html" class="nav-link active">Bosh sahifa</a>
+            </li>
+            <li><a href="#modules" class="nav-link">O‘quv modullari</a></li>
+            <li>
+              <a href="threat-detection.html" class="nav-link">Tahdidlar</a>
+            </li>
+            <li><a href="protection.html" class="nav-link">Himoya</a></li>
+            <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+            <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+            <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+            <li><a href="about.html" class="nav-link">Haqida</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            id="themeToggleBtn"
+            aria-label="Mavzuni o'zgartirish"
+            title="Mavzuni o'zgartirish"
+          >
+            ☀️
+          </button>
+          <button
+            type="button"
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Mobil menyuni ochish"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Cinematic Cyber Hero Section -->
+      <section class="cyber-hero">
+        <div class="matrix-canvas-container">
+          <canvas id="matrixCanvas"></canvas>
+        </div>
+
+        <div class="container hero-grid">
+          <div class="hero-text-col reveal">
+            <div class="section-tag">
+              <span>⚡</span>
+              <span>Milliy Kiberxavfsizlik O'quv Platformasi</span>
+            </div>
+            <h1 class="hero-title">
+              CYBER <span class="text-gradient">SECURITY</span> BASICS
+            </h1>
+            <div class="hero-tagline">
+              Kiberxavfsizlikni noldan professional darajagacha o‘rganing.
+            </div>
+            <p class="hero-desc">
+              Kriptografiya, tarmoq xavfsizligi, kiberhujumlarni aniqlash,
+              mudofaa strategiyalari va axborot xavfsizligi qonunchiligini 30 ta
+              amaliy dars, interaktiv laboratoriyalar hamda sinov testlari
+              orqali o‘rganing.
+            </p>
+
+            <div class="hero-buttons">
+              <a
+                href="#modules"
+                class="cyber-btn cyber-btn-primary cyber-btn-lg"
+              >
+                🚀 O‘rganishni boshlash
+              </a>
+              <a
+                href="cyber-lab.html"
+                class="cyber-btn cyber-btn-secondary cyber-btn-lg"
+              >
+                🧪 Cyber Lab
+              </a>
+              <a
+                href="quiz.html"
+                class="cyber-btn cyber-btn-outline cyber-btn-lg"
+              >
+                🧠 Bilimingizni sinang
+              </a>
+            </div>
+
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <h4 data-counter="6">6</h4>
+                <p>O'quv moduli</p>
+              </div>
+              <div class="hero-stat-item">
+                <h4 data-counter="30" data-suffix="+">30+</h4>
+                <p>Amaliy dars</p>
+              </div>
+              <div class="hero-stat-item">
+                <h4 data-counter="15">15</h4>
+                <p>Test savoli</p>
+              </div>
+              <div class="hero-stat-item">
+                <h4 data-counter="100" data-suffix="%">100%</h4>
+                <p>Bepul & Amaliy</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hacker Terminal Preview -->
+          <div class="hero-visual-col reveal reveal-delay-2">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-controls">
+                  <span class="terminal-dot red"></span>
+                  <span class="terminal-dot yellow"></span>
+                  <span class="terminal-dot green"></span>
+                </div>
+                <div class="terminal-title">bash — security_core.sh</div>
+                <span class="cyber-badge badge-green">LIVE</span>
+              </div>
+              <div class="terminal-body" id="terminalBoot">
+                <!-- Typewriter boot animates here -->
+              </div>
+            </div>
+
+            <div
+              class="cyber-card"
+              style="
+                margin-top: 1.5rem;
+                padding: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 1.25rem;
+              "
+            >
+              <div class="brand-icon" style="flex-shrink: 0; font-size: 1.5rem">
+                🔐
+              </div>
+              <div>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem">
+                  Xavfsiz Ta'lim Muhiti
+                </h4>
+                <p
+                  style="
+                    font-size: 0.88rem;
+                    margin: 0;
+                    color: var(--text-secondary);
+                  "
+                >
+                  Barcha laboratoriyalar va amaliyotlar brauzer ichida xavfsiz
+                  simulyatsiya qilinadi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 Interactive Learning Modules Section -->
+      <section class="section" id="modules">
+        <div class="container">
+          <div class="section-title-wrap reveal">
+            <div class="section-tag">Strukturaviy O'quv Rejasi</div>
+            <h2 class="section-title">Nima O‘rgana Olasiz?</h2>
+            <p class="section-subtitle">
+              Zamonaviy xalqaro xavfsizlik standartlari (NIST, ISO/IEC 27001)
+              asosida tuzilgan 6 ta asosiy yo'nalish. Har bir modulda to'liq
+              darslar, tushunchalar va amaliy misollar mavjud.
+            </p>
+          </div>
+
+          <div class="modules-grid">
+            <!-- Module 1: Cryptography -->
+            <div class="module-card tilt-card reveal reveal-delay-1">
+              <div class="module-card-header">
+                <div class="module-icon">🔐</div>
+                <span class="cyber-badge badge-cyan">Modul 1</span>
+              </div>
+              <div class="module-card-body">
+                <h3>Kriptografiya</h3>
+                <p>
+                  Ma'lumotlarni shifrlash, xesh-funksiyalar (SHA-256), simmetrik
+                  (AES) va assimetrik (RSA) kriptotizimlar hamda raqamli imzo
+                  asoslari. Interaktiv Caesar Cipher simulyatori mavjud.
+                </p>
+              </div>
+              <div class="module-card-footer">
+                <span class="module-lessons-count"
+                  >📖 5 ta dars • 80 daqiqa</span
+                >
+                <a
+                  href="cryptography.html"
+                  class="cyber-btn cyber-btn-primary cyber-btn-sm"
+                >
+                  O‘rganish →
+                </a>
+              </div>
+            </div>
+
+            <!-- Module 2: Network Security -->
+            <div class="module-card tilt-card reveal reveal-delay-2">
+              <div class="module-card-header">
+                <div class="module-icon">🌐</div>
+                <span class="cyber-badge badge-blue">Modul 2</span>
+              </div>
+              <div class="module-card-body">
+                <h3>Tarmoq Xavfsizligi</h3>
+                <p>
+                  Kompyuter tarmoqlari arxitekturasi, OSI 7 pog'onali modeli,
+                  Firewall ishlash tamoyillari, VPN tunnellari, HTTPS/TLS
+                  shifrlash va Wi-Fi (WPA3) xavfsizligi.
+                </p>
+              </div>
+              <div class="module-card-footer">
+                <span class="module-lessons-count"
+                  >📖 5 ta dars • 85 daqiqa</span
+                >
+                <a
+                  href="network-security.html"
+                  class="cyber-btn cyber-btn-primary cyber-btn-sm"
+                >
+                  O‘rganish →
+                </a>
+              </div>
+            </div>
+
+            <!-- Module 3: Threat Detection -->
+            <div class="module-card tilt-card reveal reveal-delay-3">
+              <div class="module-card-header">
+                <div class="module-icon">⚠️</div>
+                <span class="cyber-badge badge-orange">Modul 3</span>
+              </div>
+              <div class="module-card-body">
+                <h3>Tahdidlarni Aniqlash</h3>
+                <p>
+                  Viruslar, Ransomware tovlamachiligi, Phishing va ijtimoiy
+                  muhandislik, DoS/DDoS hujumlari, SQL Injection va tarmoqdagi
+                  shubhali anomaliyalarni aniqlash simulyatori.
+                </p>
+              </div>
+              <div class="module-card-footer">
+                <span class="module-lessons-count"
+                  >📖 5 ta dars • 85 daqiqa</span
+                >
+                <a
+                  href="threat-detection.html"
+                  class="cyber-btn cyber-btn-primary cyber-btn-sm"
+                >
+                  O‘rganish →
+                </a>
+              </div>
+            </div>
+
+            <!-- Module 4: Protection Methods -->
+            <div class="module-card tilt-card reveal reveal-delay-1">
+              <div class="module-card-header">
+                <div class="module-icon">🛡️</div>
+                <span class="cyber-badge badge-green">Modul 4</span>
+              </div>
+              <div class="module-card-body">
+                <h3>Himoya Usullari</h3>
+                <p>
+                  Kuchli parollar va Passphrase, ko'p bosqichli autentifikatsiya
+                  (MFA/2FA), Antivirus va EDR tizimlari, 3-2-1 zaxira nusxalash
+                  va qurilmalar gigiyenasi.
+                </p>
+              </div>
+              <div class="module-card-footer">
+                <span class="module-lessons-count"
+                  >📖 5 ta dars • 75 daqiqa</span
+                >
+                <a
+                  href="protection.html"
+                  class="cyber-btn cyber-btn-primary cyber-btn-sm"
+                >
+                  O‘rganish →
+                </a>
+              </div>
+            </div>
+
+            <!-- Module 5: Risk Management -->
+            <div class="module-card tilt-card reveal reveal-delay-2">
+              <div class="module-card-header">
+                <div class="module-icon">📋</div>
+                <span class="cyber-badge badge-orange">Modul 5</span>
+              </div>
+              <div class="module-card-body">
+                <h3>Siyosat va Risklar</h3>
+                <p>
+                  Axborot xavfsizligi siyosati, CIA Triadasi (Maxfiylik,
+                  Butunlik, Foydalana olishlik), Risk assessment matritsasi va
+                  kiberhodisalarga javob berish (Incident Response).
+                </p>
+              </div>
+              <div class="module-card-footer">
+                <span class="module-lessons-count"
+                  >📖 5 ta dars • 85 daqiqa</span
+                >
+                <a
+                  href="risk-management.html"
+                  class="cyber-btn cyber-btn-primary cyber-btn-sm"
+                >
+                  O‘rganish →
+                </a>
+              </div>
+            </div>
+
+            <!-- Module 6: Cyber Law & Ethics -->
+            <div class="module-card tilt-card reveal reveal-delay-3">
+              <div class="module-card-header">
+                <div class="module-icon">⚖️</div>
+                <span class="cyber-badge badge-cyan">Modul 6</span>
+              </div>
+              <div class="module-card-body">
+                <h3>Qonunchilik va Etika</h3>
+                <p>
+                  Kiberetika, White Hat, Black Hat va Gray Hat farqlari, shaxsiy
+                  ma'lumotlar xavfsizligi, O'zbekiston kiberxavfsizlik
+                  qonunchiligi asoslari va Responsible Disclosure.
+                </p>
+              </div>
+              <div class="module-card-footer">
+                <span class="module-lessons-count"
+                  >📖 5 ta dars • 78 daqiqa</span
+                >
+                <a
+                  href="cyber-law.html"
+                  class="cyber-btn cyber-btn-primary cyber-btn-sm"
+                >
+                  O‘rganish →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cyber Lab Showcase Section -->
+      <section
+        class="section"
+        style="
+          background: rgba(11, 17, 32, 0.6);
+          border-top: 1px solid var(--border-color);
+          border-bottom: 1px solid var(--border-color);
+        "
+      >
+        <div class="container">
+          <div class="section-title-wrap reveal">
+            <div class="section-tag">Amaliy Mashg'ulot</div>
+            <h2 class="section-title">Interaktiv Cyber Lab</h2>
+            <p class="section-subtitle">
+              Nazariyani amaliyot bilan mustahkamlang. Real vaqt rejimida
+              ishlovchi xavfsiz laboratoriya simulyatorlari.
+            </p>
+          </div>
+
+          <div class="concept-grid reveal">
+            <div class="cyber-card">
+              <div style="font-size: 2rem; margin-bottom: 1rem">🔑</div>
+              <h4>Password Strength Analyzer</h4>
+              <p>
+                Parolingiz entropiyasini va xakerlik quvvatiga bardoshliligini
+                real vaqt rejimida hisoblab beruvchi xavfsiz tahlil vositasi.
+              </p>
+              <a
+                href="cyber-lab.html#lab-password"
+                class="cyber-btn cyber-btn-outline cyber-btn-sm"
+                style="margin-top: 1rem"
+                >Sinab ko'rish →</a
+              >
+            </div>
+            <div class="cyber-card">
+              <div style="font-size: 2rem; margin-bottom: 1rem">🏛️</div>
+              <h4>Caesar Cipher Simulator</h4>
+              <p>
+                Qadimgi Rim davridan to zamonaviy shifrlashgacha bo'lgan
+                siljitish algoritmini vizual tarzda tushunish vositasi.
+              </p>
+              <a
+                href="cyber-lab.html#lab-caesar"
+                class="cyber-btn cyber-btn-outline cyber-btn-sm"
+                style="margin-top: 1rem"
+                >Sinab ko'rish →</a
+              >
+            </div>
+            <div class="cyber-card">
+              <div style="font-size: 2rem; margin-bottom: 1rem">🎣</div>
+              <h4>Phishing Detection Challenge</h4>
+              <p>
+                Haqiqiydek ko'rinuvchi soxta bank xatidagi 5 ta xavfli
+                kiber-belgini topish bo'yicha interaktiv o'yin-mashg'ulot.
+              </p>
+              <a
+                href="cyber-lab.html#lab-phishing"
+                class="cyber-btn cyber-btn-outline cyber-btn-sm"
+                style="margin-top: 1rem"
+                >Sinab ko'rish →</a
+              >
+            </div>
+            <div class="cyber-card">
+              <div style="font-size: 2rem; margin-bottom: 1rem">📊</div>
+              <h4>Risk Matrix (5x5) Kalkulyator</h4>
+              <p>
+                Tahdid ehtimolligi va yetkaziladigan zarar asosida risk
+                darajasini aniqlovchi xalqaro baholash vositasi.
+              </p>
+              <a
+                href="cyber-lab.html#lab-risk"
+                class="cyber-btn cyber-btn-outline cyber-btn-sm"
+                style="margin-top: 1rem"
+                >Sinab ko'rish →</a
+              >
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 3rem">
+            <a
+              href="cyber-lab.html"
+              class="cyber-btn cyber-btn-primary cyber-btn-lg"
+            >
+              🧪 Barcha Laboratoriyalarga O'tish
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA & Quiz Section -->
+      <section class="section">
+        <div class="container">
+          <div
+            class="cyber-card gradient-border-card"
+            style="text-align: center; padding: 4rem 2rem"
+          >
+            <div class="section-tag">Bilimni Tekshirish</div>
+            <h2
+              style="font-size: clamp(1.8rem, 3vw, 2.8rem); margin-bottom: 1rem"
+            >
+              Kiberxavfsizlik Bo'yicha Bilimingiz Qay Darajada?
+            </h2>
+            <p
+              style="
+                max-width: 650px;
+                margin: 0 auto 2rem;
+                font-size: 1.1rem;
+                color: var(--text-secondary);
+              "
+            >
+              Platformaning 6 ta moduli asosida tuzilgan 15 savollik
+              professional testni ishlang. Natijalaringiz tahlili va zaif
+              nuqtalar bo'yicha shaxsiy tavsiyalarga ega bo'ling.
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <a
+                href="quiz.html"
+                class="cyber-btn cyber-btn-success cyber-btn-lg"
+              >
+                🎯 15 Savollik Quizni Boshlash
+              </a>
+              <a
+                href="dashboard.html"
+                class="cyber-btn cyber-btn-secondary cyber-btn-lg"
+              >
+                📊 O'quv Dashboardim
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Professional Cybersecurity Footer -->
+    <footer class="cyber-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="nav-brand" style="margin-bottom: 1rem">
+              <span class="brand-icon">🛡️</span>
+              <span>CYBER <span class="text-gradient">SECURITY</span></span>
+            </div>
+            <p>
+              Kiberxavfsizlik asoslari — axborot xavfsizligi sohasida mustahkam
+              bilim va amaliy ko'nikmalar beruvchi milliy ta'lim platformasi.
+            </p>
+            <div class="footer-socials">
+              <a
+                href="https://t.me/IT_Impulse_code"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                title="Telegram"
+                ><img
+                  src="./images/image copy.png"
+                  alt="Telegram"
+                  ,
+                  height="30px"
+                  ,
+                  width="30px"
+              /></a>
+              <a
+                href="https://t.me/IT_Club_GFU"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                title="Telegram"
+                ><img
+                  src="./images/image copy.png"
+                  alt="Telegram"
+                  ,
+                  height="30px"
+                  ,
+                  width="30px"
+              /></a>
+              <a href="about.html" class="social-link" title="Aloqa">✉️</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Platforma</h4>
+            <ul class="footer-nav">
+              <li><a href="index.html">Bosh sahifa</a></li>
+              <li><a href="about.html">Platforma haqida</a></li>
+              <li><a href="#modules">O‘quv modullari</a></li>
+              <li><a href="dashboard.html">Shaxsiy Dashboard</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Ta’lim</h4>
+            <ul class="footer-nav">
+              <li><a href="cryptography.html">Kriptografiya</a></li>
+              <li><a href="network-security.html">Tarmoq xavfsizligi</a></li>
+              <li><a href="cyber-lab.html">Cyber Lab</a></li>
+              <li><a href="quiz.html">Bilim Testi (Quiz)</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resurslar</h4>
+            <ul class="footer-nav">
+              <li><a href="threat-detection.html">Tahdidlar tahlili</a></li>
+              <li><a href="protection.html">Himoya choralari</a></li>
+              <li><a href="risk-management.html">Risklarni boshqarish</a></li>
+              <li><a href="cyber-law.html">Qonunchilik va etika</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            &copy; 2026 Cyber Security Basics. All rights reserved. University
+            of Geological Sciences
+          </div>
+          <button type="button" class="back-to-top-btn" id="backToTopBtn">
+            Yuqoriga ⬆️
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark" data-module-id="cyber-law">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qonunchilik va Etika — Modul 6 | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Kiberetika, White Hat vs Black Hat, shaxsiy ma'lumotlar xavfsizligi, O'zbekiston kiberhuquqi va Responsible Disclosure bo'yicha to'liq qo'llanma.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link active">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="module-header">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Bosh sahifa</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="index.html#modules">Modullar</a>
+                <span class="breadcrumb-sep">/</span>
+                <span>Modul 6: Qonunchilik va Etika</span>
+            </nav>
+
+            <div class="section-tag">Modul 6</div>
+            <h1>⚖️ Kiberxavfsizlik Qonunchiligi va Axloqiy Qoidalar</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 800px;">
+                Axloqiy xakerlik (Ethical Hacking), White Hat vs Black Hat tamoyillari, shaxsiy ma'lumotlar xavfsizligi, O'zbekiston kiberxavfsizlik qonunchiligi asoslari va zaifliklarni mas'uliyatli xabar qilish (Bug Bounty).
+            </p>
+
+            <div class="module-meta-bar">
+                <div class="module-meta-item"><span>📚</span> 5 ta huquqiy va axloqiy dars</div>
+                <div class="module-meta-item"><span>⏱️</span> ~78 daqiqa o'qish vaqti</div>
+                <div class="module-meta-item"><span>⚖️</span> Amaldagi qonunchilikka asoslangan</div>
+                <div class="module-meta-item"><span>🎯</span> Axloqiy kiber-madaniyat</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Module Layout -->
+    <main class="container module-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="module-sidebar">
+            <div class="sidebar-title">
+                <span>Modul Darslari</span>
+                <span class="module-progress-text" id="moduleProgressText">0/5 (0%)</span>
+            </div>
+            <div class="module-progress-track">
+                <div class="module-progress-fill" id="moduleProgressFill" style="width: 0%;"></div>
+            </div>
+
+            <ul class="lesson-nav-list">
+                <li class="lesson-nav-item">
+                    <a href="#law-1" class="lesson-nav-link active" data-lesson-id="law-1">
+                        <span>1. Kiberetika va raqamli madaniyat</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#law-2" class="lesson-nav-link" data-lesson-id="law-2">
+                        <span>2. White, Black va Gray Hat</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#law-3" class="lesson-nav-link" data-lesson-id="law-3">
+                        <span>3. Shaxsiy ma'lumotlar himoyasi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#law-4" class="lesson-nav-link" data-lesson-id="law-4">
+                        <span>4. O'zbekiston kiberxavfsizlik qonunlari</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#law-5" class="lesson-nav-link" data-lesson-id="law-5">
+                        <span>5. Responsible Disclosure & Bug Bounty</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                <a href="quiz.html" class="cyber-btn cyber-btn-outline cyber-btn-sm" style="width: 100%;">
+                    🧠 Yakuniy Quizni topshirish →
+                </a>
+            </div>
+        </aside>
+
+        <!-- Lessons Content Area -->
+        <article class="lesson-content">
+            <!-- LESSON 1 -->
+            <section class="lesson-section active" id="law-1">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">1-Dars • Raqamli Odob</span>
+                    <h2>Kiberetika va Raqamli Madaniyat Asoslari</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🤝 Kiberetika Nima?</h3>
+                    <p>
+                        Kiberetika — bu raqamli makonda, internet tarmoqlarida va dasturiy ta'minotdan foydalanishda inson xatti-harakatlarini boshqaruvchi axloqiy me'yorlar va qoidalar majmuidir.
+                    </p>
+                    <p>
+                        Raqamli dunyodagi virtual anonimlik ba'zi kishilarda "hech kim ko'rmayapti, demak hamma narsa mumkin" degan noto'g'ri tasavvurni uyg'otadi. Biroq har bir kiberharakat orqasida real odamlarning xavfsizligi, mulki va huquqlari yotadi.
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>1. Maxfiylikni Hurmat Qilish</h4>
+                            <p>Birovning telefoniga, elektron pochtasiga yoki akkauntiga uning ruxsatisiz qaramaslik va shaxsiy ma'lumotlarini tarqatmaslik.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>2. Intellektual Mulk</h4>
+                            <p>Mualliflik huquqlarini hurmat qilish, litsenziyasiz yoki xakerlik dasturlaridan foydalanmaslik, boshqalar mehnatini o'g'irlamaslik.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>3. Kiberbullingga Yo'l Qo'ymaslik</h4>
+                            <p>Tarmoqda boshqalarni haqorat qilish, tahdid qilish, doxing (manzil va shaxsiy ma'lumotlarni ommaga sizdirish) bilan shug'ullanmaslik.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">2-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 2 -->
+            <section class="lesson-section" id="law-2">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">2-Dars • Xakerlar Tasnifi</span>
+                    <h2>Xakerlar Turlari: White Hat, Black Hat va Gray Hat</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🎩 Qalpoqlar Ranglari va Ularning Farqi</h3>
+                    <div class="concept-grid">
+                        <div class="concept-card" style="border-top: 3px solid var(--cyber-green);">
+                            <h4>⚪ White Hat (Oq Qalpoqli / Axloqiy Xaker)</h4>
+                            <p><strong>To'liq qonuniy va xavfsiz.</strong> Tizim egasining yozma ruxsati bilan zaifliklarni topadi (Penetration Testing) va ularni tuzatish bo'yicha hisobot beradi. Maqsadi — mudofaa.</p>
+                        </div>
+                        <div class="concept-card" style="border-top: 3px solid var(--danger-red);">
+                            <h4>⚫ Black Hat (Qora Qalpoqli / Kiberjinoyatchi)</h4>
+                            <p><strong>Noqonuniy va xavfli.</strong> Tizimlarga ruxsatsiz buzib kiradi, ma'lumotlarni o'g'irlaydi, pul talab qiladi (tovlamachilik) yoki tizimni yo'q qiladi. Qonun bo'yicha jinoiy javobgarlikka tortiladi.</p>
+                        </div>
+                        <div class="concept-card" style="border-top: 3px solid var(--warning-orange);">
+                            <h4>🔘 Gray Hat (Kulrang Qalpoqli)</h4>
+                            <p><strong>Oraliq toifa.</strong> Ruxsatsiz tizim zaifligini topadi, biroq zarar yetkazmasdan tizim egasiga "Men sizning saytingizdagi teshikni topdim, mukofot bering" deb murojaat qiladi. Ruxsatsiz harakat bo'lgani sababli noqonuniy hisoblanadi.</p>
+                        </div>
+                    </div>
+
+                    <div class="cyber-alert cyber-alert-info">
+                        <div class="cyber-alert-icon">💡</div>
+                        <div class="cyber-alert-content">
+                            <h4>Axloqiy Xakerning Oltin Qoidasi</h4>
+                            <p>Agar sizda tizim egasi tomonidan imzolangan rasmiy shartnoma (Rules of Engagement) bo'lmasa — har qanday xavfsizlik tekshiruvi noqonuniy harakat hisoblanadi!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 1-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">3-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 3 -->
+            <section class="lesson-section" id="law-3">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">3-Dars • Maxfiylik</span>
+                    <h2>Shaxsiy Ma'lumotlarni Himoya Qilish (Data Privacy)</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🔒 Shaxsga Doir Ma'lumotlar Nima?</h3>
+                    <p>
+                        Shaxsga doir ma'lumot — bu muayyan jismoniy shaxsni to'g'ridan-to'g'ri yoki bilvosita aniqlash imkonini beruvchi har qanday ma'lumotdir: F.I.Sh., pasport ma'lumotlari, JSHSHIR (PINFL), manzil, telefon raqami, biometrik ma'lumotlar, joylashuv (GPS) va bank kartasi rekvizitlari.
+                    </p>
+
+                    <h3>🌍 Xalqaro Standartlar (GDPR Tamoyillari)</h3>
+                    <ul>
+                        <li><strong>Maqsadli cheklanish:</strong> Ma'lumot faqat e'lon qilingan aniq maqsad uchun to'planishi kerak (masalan, yetkazib berish xizmati faqat manzilni so'rashi lozim, pasport seriyasini emas).</li>
+                        <li><strong>Minimallashtirish:</strong> Keragidan ortiq ma'lumot to'plash taqiqlanadi.</li>
+                        <li><strong>Saqlash muddati:</strong> Maqsadga erishilgach, ma'lumotlar o'chirilishi yoki anonimlashtirilishi shart.</li>
+                        <li><strong>O'chirish huquqi (Right to be Forgotten):</strong> Foydalanuvchi o'z ma'lumotlarini bazadan butunlay o'chirishni talab qilishga haqli.</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 2-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">4-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 4 -->
+            <section class="lesson-section" id="law-4">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">4-Dars • Milliy Qonunchilik</span>
+                    <h2>O'zbekiston Kiberxavfsizlik Qonunchiligi Sharhi</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🇺🇿 Asosiy Qonunchilik Hujjatlari</h3>
+                    <p>O'zbekiston Respublikasida axborot xavfsizligi va kiberxavfsizlik sohasi quyidagi amaldagi qonunlar bilan qat'iy tartibga solinadi:</p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>"Kiberxavfsizlik to'g'risida"gi Qonun</h4>
+                            <p>2022-yilda qabul qilingan (O'RQ-764). Kiberxavfsizlik sohasidagi yagona davlat siyosatini, muhim axborot infratuzilmasi ob'ektlarini (MAIO) himoyalash va kiberhodisalarni bartaraf etish tartibini belgilaydi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>"Shaxsga doir ma'lumotlar to'g'risida"gi Qonun</h4>
+                            <p>2019-yilda qabul qilingan (O'RQ-547). Fuqarolarning shaxsiy ma'lumotlarini qayta ishlash, saqlash, himoyalash va ularning maxfiyligini ta'minlash talablarini mustahkamlaydi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>O'zR Jinoyat Kodeksi (XX-bob)</h4>
+                            <p>Axborot texnologiyalari sohasidagi jinoyatlar: kompyuter axborotidan qonunga xilof ravishda foydalanish, viruslar yaratish va tarqatish, tizimlarga ruxsatsiz kirish uchun qat'iy jinoiy javobgarlik belgilangan.</p>
+                        </div>
+                    </div>
+
+                    <div class="cyber-alert cyber-alert-warning">
+                        <div class="cyber-alert-icon">⚖️</div>
+                        <div class="cyber-alert-content">
+                            <h4>Ogohlantirish</h4>
+                            <p>"Shunchaki qiziqish uchun" birovning Wi-Fi tarmog'iga ulanish, do'stining ijtimoiy tarmoqdagi akkauntiga buzib kirish yoki ddos hujumi uyushtirish — qonun bo'yicha jiddiy javobgarlikka sabab bo'ladi!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 3-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">5-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 5 -->
+            <section class="lesson-section" id="law-5">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">5-Dars • Xavfsiz Hamkorlik</span>
+                    <h2>Responsible Disclosure va Bug Bounty Madaniyati</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🏆 Bug Bounty Nima?</h3>
+                    <p>
+                        <strong>Bug Bounty</strong> — bu yirik kompaniyalar (Google, Meta, Apple va O'zbekistondagi banklar) tomonidan e'lon qilinadigan rasmiy mukofot dasturidir. 
+                        Unda mustaqil tadqiqotchilar (White Hat) kompaniyaning tizimlarini tekshirib zaiflik topsalar, pul mukofoti (Bounty) bilan taqdirlanadi.
+                    </p>
+
+                    <h3>🤝 Mas'uliyatli Xabar Berish (Responsible Disclosure) Tartibi</h3>
+                    <ol>
+                        <li><strong>Zaiflikni aniqlash:</strong> Tizimni buzmasdan, ma'lumotlarni o'g'irlamasdan yoki xizmatni to'xtatmasdan zaiflik mavjudligini tasdiqlovchi dalil (PoC - Proof of Concept) tayyorlash.</li>
+                        <li><strong>Xavfsizlik bo'limiga murojaat:</strong> Zaiflik haqidagi batafsil hisobotni faqat kompaniyaning xavfsizlik manziliga (masalan: <code>security@company.uz</code>) maxfiy yuborish.</li>
+                        <li><strong>Yamoq (Patch) kutish:</strong> Kompaniyaga teshikni tuzatish uchun yetarli vaqt (odatda 30-90 kun) berish.</li>
+                        <li><strong>Koordinatorlik:</strong> Muammo to'liq tuzatilgach, kompaniya ruxsati bilan o'quv maqsadida maqola yoki tahlil chop etish.</li>
+                    </ol>
+
+                    <div class="cyber-alert cyber-alert-success">
+                        <div class="cyber-alert-icon">🎓</div>
+                        <div class="cyber-alert-content">
+                            <h4>Modul va Kurs Xulosasi</h4>
+                            <p>Kiberxavfsizlik — bu qurol emas, balki qalqondir! Bilimlaringizni faqat yaxshilik, tizimlarni himoyalash va raqamli dunyoni xavfsizroq qilish yo'lida ishlating. Endi o'rganganlaringizni 15 savollik yakuniy testda sinab ko'ring!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 4-Dars</button>
+                        <a href="quiz.html" class="cyber-btn cyber-btn-success">🎯 15 Savollik Quizni Boshlash →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

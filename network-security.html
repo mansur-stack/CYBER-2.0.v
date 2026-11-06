@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark" data-module-id="network-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarmoq Xavfsizligi — Modul 2 | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Kompyuter tarmoqlari, OSI va TCP/IP modellari, Firewall, VPN, DNS xavfsizligi va Wi-Fi WPA3 bo'yicha to'liq o'quv qo'llanma.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link active">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="module-header">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Bosh sahifa</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="index.html#modules">Modullar</a>
+                <span class="breadcrumb-sep">/</span>
+                <span>Modul 2: Tarmoq Xavfsizligi</span>
+            </nav>
+
+            <div class="section-tag">Modul 2</div>
+            <h1>🌐 Tarmoq Xavfsizligi va Perimetr Himoyasi</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 800px;">
+                Tarmoq arxitekturasi, OSI 7 pog'onali modeli, Firewall (tarmoqlararo ekran), VPN texnologiyalari, DNS xavfsizligi va zamonaviy Wi-Fi tarmoqlarini kiberhujumlardan asrash asoslari.
+            </p>
+
+            <div class="module-meta-bar">
+                <div class="module-meta-item"><span>📚</span> 5 ta batafsil dars</div>
+                <div class="module-meta-item"><span>⏱️</span> ~85 daqiqa o'qish vaqti</div>
+                <div class="module-meta-item"><span>🔌</span> Interaktiv OSI va Portlar vizualizatori</div>
+                <div class="module-meta-item"><span>🎯</span> 100% amaliy va tushunarli</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Module Layout -->
+    <main class="container module-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="module-sidebar">
+            <div class="sidebar-title">
+                <span>Modul Darslari</span>
+                <span class="module-progress-text" id="moduleProgressText">0/5 (0%)</span>
+            </div>
+            <div class="module-progress-track">
+                <div class="module-progress-fill" id="moduleProgressFill" style="width: 0%;"></div>
+            </div>
+
+            <ul class="lesson-nav-list">
+                <li class="lesson-nav-item">
+                    <a href="#net-1" class="lesson-nav-link active" data-lesson-id="net-1">
+                        <span>1. Tarmoqlar va xavfsizlik asoslari</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#net-2" class="lesson-nav-link" data-lesson-id="net-2">
+                        <span>2. TCP/IP va OSI 7 pog'onali modeli</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#net-3" class="lesson-nav-link" data-lesson-id="net-3">
+                        <span>3. Firewall qanday ishlaydi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#net-4" class="lesson-nav-link" data-lesson-id="net-4">
+                        <span>4. VPN, DNS va HTTPS xavfsizligi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#net-5" class="lesson-nav-link" data-lesson-id="net-5">
+                        <span>5. Wi-Fi va WPA3 xavfsizligi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                <a href="cyber-lab.html" class="cyber-btn cyber-btn-outline cyber-btn-sm" style="width: 100%;">
+                    🧪 Cyber Labga o'tish →
+                </a>
+            </div>
+        </aside>
+
+        <!-- Lessons Content Area -->
+        <article class="lesson-content">
+            <!-- LESSON 1 -->
+            <section class="lesson-section active" id="net-1">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">1-Dars • Tarmoq Tushunchalari</span>
+                    <h2>Kompyuter Tarmoqlari va Axborot Xavfsizligi Asoslari</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🎯 Tarmoq Xavfsizligi Nima?</h3>
+                    <p>
+                        <strong>Tarmoq xavfsizligi (Network Security)</strong> — bu kompyuter tarmoqlari infratuzilmasi, uskunalar va ularda aylanuvchi ma'lumotlarni ruxsatsiz kirish, o'zgartirish, yo'q qilish yoki xizmat ko'rsatishni to'xtatib qo'yish (DDoS) kabi kiberhujumlardan himoyalashga qaratilgan qoidalar, dasturlar va uskunalar majmuidir.
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>🌐 IP Manzil (Mantiqiy adres)</h4>
+                            <p>Tarmoqdagi har bir qurilmaning raqamli pasporti. IPv4 (masalan, <code>192.168.1.1</code>) va zamonaviy 128-bitli IPv6. Xakerlar ko'pincha soxta IP yuborish (IP Spoofing) orqali hujum qiladi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>🏷️ MAC Manzil (Jismoniy adres)</h4>
+                            <p>Tarmoq kartasining (NIC) ishlab chiqaruvchi tomonidan berilgan o'zgarmas 48-bitli apparat kodi (masalan, <code>00:1A:2B:3C:4D:5E</code>). Mahalliy tarmoqda paketlar aynan MAC bo'yicha yetkaziladi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>🚪 Portlar (Port Numbers)</h4>
+                            <p>Kompyuterda ishlayotgan qaysi dastur ma'lumot olayotganini bildiruvchi mantiqiy darvoza (0 dan 65535 gacha). Masalan: 80 (HTTP), 443 (HTTPS), 22 (SSH), 53 (DNS).</p>
+                        </div>
+                    </div>
+
+                    <h3>⚠️ Tarmoqdagi Asosiy Zaiflik Nuqtalari</h3>
+                    <p>
+                        Tarmoq ma'lumotlar oqimi orqali ishlaydi. Agar trafik shifrlanmagan bo'lsa, xaker <strong>Sniffing (Wireshark)</strong> dasturlari yordamida tarmoqdagi barcha parollar va shaxsiy ma'lumotlarni tutib olishi mumkin.
+                    </p>
+
+                    <div class="cyber-alert cyber-alert-warning">
+                        <div class="cyber-alert-icon">⚠️</div>
+                        <div class="cyber-alert-content">
+                            <h4>Muhim Xavfsizlik Qoidasi</h4>
+                            <p>Qurilmalaringizda foydalanilmayotgan barcha ochiq portlarni (masalan: Telnet port 23, FTP port 21) zudlik bilan yoping! Ochiq port — xaker uchun eshigi qulflanmagan xonadir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">2-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 2 -->
+            <section class="lesson-section" id="net-2">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">2-Dars • Tarmoq Modellari</span>
+                    <h2>TCP/IP va OSI 7 Pog'onali Modeli Tahlili</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🏛️ OSI Modeli (Open Systems Interconnection)</h3>
+                    <p>
+                        Xalqaro standartlashtirish tashkiloti (ISO) tomonidan yaratilgan ushbu model ma'lumotlarning bir kompyuterdan ikkinchisiga o'tish jarayonini 7 ta mantiqiy pog'onaga bo'ladi:
+                    </p>
+
+                    <div class="code-snippet-box">
+                        <div class="code-header">
+                            <span>OSI 7 Pog'onali Modeli va Xavfsizlik Xaritasi</span>
+                            <button type="button" class="copy-code-btn">Nusxa olish</button>
+                        </div>
+                        <pre>Pog'ona # | Nomi (Layer)         | Protokollar       | Asosiy Xavf & Himoya
+---------------------------------------------------------------------------------
+7         | Amaliy (Application) | HTTP, DNS, SMTP   | XSS, SQLi, Phishing -> WAF
+6         | Taqdimot (Presentation)| TLS/SSL, JPEG    | Ma'lumot shifrlash (HTTPS)
+5         | Seans (Session)      | NetBIOS, RPC      | Hijacking -> Token xavfsizligi
+4         | Transport            | TCP, UDP          | SYN Flood -> Stateful Firewall
+3         | Tarmoq (Network)     | IP, ICMP, IPsec   | IP Spoofing, Ping Flood -> Router ACL
+2         | Kanal (Data Link)    | Ethernet, Wi-Fi   | ARP Poisoning, MAC Spoofing -> DAI
+1         | Jismoniy (Physical)  | Kabel, Radioto'lqin| Kabelni kesish, tinglash -> Jismoniy nazorat</pre>
+                    </div>
+
+                    <h3>⚡ TCP va UDP Farqi</h3>
+                    <p>
+                        <strong>TCP (Transmission Control Protocol):</strong> Ishonchli, ulanish o'rnatuvchi protokol. Ma'lumot uzatilishidan oldin "3-tomonlama salomlashish" (3-Way Handshake: SYN -> SYN-ACK -> ACK) bajariladi. Xatoliklar tekshiriladi.
+                    </p>
+                    <p>
+                        <strong>UDP (User Datagram Protocol):</strong> Ulanishsiz, tezkor protokol. Oqimli video, onlayn o'yinlar va DNS uchun ishlatiladi. Paket yo'qolsa qayta so'ralmaydi.
+                    </p>
+
+                    <div class="cyber-alert cyber-alert-info">
+                        <div class="cyber-alert-icon">💡</div>
+                        <div class="cyber-alert-content">
+                            <h4>Hujum Misoli: TCP SYN Flood</h4>
+                            <p>Xaker serverga millionlab soxta SYN so'rovlarini yuboradi, ammo yakuniy ACK tasdig'ini jo'natmaydi. Natijada serverning barcha xotira navbati to'lib qoladi va haqiqiy foydalanuvchilar saytga kira olmay qoladi (DoS hujumi).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 1-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">3-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 3 -->
+            <section class="lesson-section" id="net-3">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">3-Dars • Perimetr Himoyasi</span>
+                    <h2>Firewall (Tarmoqlararo Ekran) Qanday Ishlaydi?</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🛡️ Firewall Vazifasi</h3>
+                    <p>
+                        Firewall — bu ichki ishonchli tarmoq (masalan, ofis yoki uy tarmog'i) bilan tashqi ishonchsiz tarmoq (Internet) o'rtasidagi chegara postidir. U barcha o'tayotgan paketlarni tekshiradi va belgilangan xavfsizlik qoidalari (Ruleset) asosida o'tkazadi yoki bloklaydi.
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>1. Paket Filtrlash (Stateless)</h4>
+                            <p>Har bir paketning sarlavhasidagi manba IP, maqsad IP va port raqamiga qaraydi. Ulanish tarixini eslab qolmaydi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>2. Stateful Inspection (Holatli tekshiruv)</h4>
+                            <p>Ulanishlar sessiyasini kuzatib boradi. Agar ichkaridan tashqariga so'rov chiqmagan bo'lsa, tashqaridan kelgan shubhali javob paketini avtomatik bloklaydi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>3. WAF (Web Application Firewall)</h4>
+                            <p>7-Amaliy pog'onada ishlaydi. Veb-saytlarga kelayotgan SQL Injection va XSS hujumlarini bevosita HTTP so'rovlar ichidan aniqlab zararsizlantiradi.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-snippet-box">
+                        <div class="code-header">
+                            <span>Linux UFW / Iptables Firewall Qoidasi Namunasi</span>
+                            <button type="button" class="copy-code-btn">Nusxa olish</button>
+                        </div>
+                        <pre># Standart qoida: barcha kiruvchi trafikni bloklash, chiquvchiga ruxsat berish
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Faqat xavfsiz portlarga ruxsat berish
+sudo ufw allow 22/tcp    # SSH masofaviy boshqaruv
+sudo ufw allow 80/tcp    # HTTP
+sudo ufw allow 443/tcp   # HTTPS xavfsiz veb
+
+# Firewallni ishga tushirish
+sudo ufw enable</pre>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 2-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">4-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 4 -->
+            <section class="lesson-section" id="net-4">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">4-Dars • Xavfsiz Aloqa</span>
+                    <h2>VPN, DNS Xavfsizligi va HTTPS Protokoli</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🔒 VPN (Virtual Private Network) Nima?</h3>
+                    <p>
+                        VPN — bu ochiq internet ustidan shifrlangan maxfiy "tunnel" qurish texnologiyasidir. 
+                        Siz kafe yoki aeroportdagi ochiq Wi-Fi tarmog'iga ulanganda, xakerlar oraliqdagi trafigingizni ko'ra olmaydi, chunki barcha ma'lumotlar to'liq shifrlangan holatda VPN-serverga yetkaziladi.
+                    </p>
+
+                    <h3>🌐 DNS va Uning Zaifliklari (DNS Spoofing)</h3>
+                    <p>
+                        DNS (Domain Name System) — internetning telefon kitobidir. U <code>kun.uz</code> kabi nomlarni <code>185.178.208.10</code> kabi IP manzilga aylantiradi. 
+                        Agar kiberjinoyatchi sizning DNS so'rovingizni soxtalashtirsa (DNS Cache Poisoning), siz haqiqiy bank sayti manzilini yozsangiz ham, xakerning soxta nusxa saytiga tushib qolishingiz mumkin!
+                    </p>
+                    <p>
+                        <strong>Himoya:</strong> DNSSEC (DNS Security Extensions) va DoH (DNS over HTTPS) texnologiyalari orqali DNS so'rovlarini kriptografik himoyalash.
+                    </p>
+
+                    <h3>🔐 HTTPS va TLS 1.3</h3>
+                    <p>
+                        HTTPS brauzeringiz va veb-server o'rtasidagi har bir baytni TLS (Transport Layer Security) protokoli orqali shifrlaydi. Brauzerda yashil qulf belgisi ko'rinishi saytning raqamli sertifikati (SSL Certificate) haqiqiy ekanligini bildiradi.
+                    </p>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 3-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">5-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 5 -->
+            <section class="lesson-section" id="net-5">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">5-Dars • Simsiz Tarmoqlar</span>
+                    <h2>Wi-Fi Xavfsizligi va WPA3 Standarti</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>📡 Wi-Fi Xavfsizlik Standartlari Tarixi</h3>
+                    <ul>
+                        <li><strong>WEP (Wired Equivalent Privacy):</strong> 1997-yil. Bugungi kunda mutlaqo yaroqsiz — bir necha daqiqada ochiladi.</li>
+                        <li><strong>WPA:</strong> Vaqtinchalik takomillashtirish, baribir zaif.</li>
+                        <li><strong>WPA2-PSK (AES):</strong> 2004-yildan beri eng keng tarqalgan standart. Biroq KRACK (Key Reinstallation Attack) zaifligiga ega.</li>
+                        <li><strong>WPA3 (Zamonaviy Oltin Standart):</strong> 192-bitli xavfsizlik darajasi, SAE (Simultaneous Authentication of Equals) protokoli orqali parolni offline rejimda lug'at orqali taxmin qilish (Dictionary Attack) imkoniyatini yo'qqa chiqaradi.</li>
+                    </ul>
+
+                    <h3>⚠️ Ommaviy Ochiq Wi-Fi Xavflari ("Evil Twin" Hujumi)</h3>
+                    <p>
+                        Xaker kafeda o'tirib o'z noutbukida <code>"KAFE_BEPUL_WIFI"</code> nomli soxta Wi-Fi nuqtasini ochadi. Odamlar unga ulanganda, barcha kiritilgan parollar, chatlar va shaxsiy ma'lumotlar xakerning ekranida ko'rinadi.
+                    </p>
+
+                    <div class="cyber-alert cyber-alert-success">
+                        <div class="cyber-alert-icon">✅</div>
+                        <div class="cyber-alert-content">
+                            <h4>Uy Wi-Fi Routeri Uchun 5 Muhim Qoida</h4>
+                            <p>1. Routerning standart <code>admin / admin</code> parolini o'zgartiring.<br>
+                            2. Shifrlash turini <strong>WPA3-Personal</strong> yoki <strong>WPA2-AES</strong> qilib sozlang.<br>
+                            3. Wi-Fi parolini kamida 14 ta belgidan iborat qiling.<br>
+                            4. Router dasturiy ta'minotini (Firmware) muntazam yangilab boring.<br>
+                            5. WPS (Wi-Fi Protected Setup) funksiyasini o'chirib qo'ying (u orqali parolni 4 soatda buzish mumkin).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 4-Dars</button>
+                        <a href="threat-detection.html" class="cyber-btn cyber-btn-primary">Keyingi Modul: Tahdidlarni Aniqlash →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

